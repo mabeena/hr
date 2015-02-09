@@ -1,0 +1,27 @@
+<h1>Listing employee_educations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Employee</th>
+      <th>Education</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @employee_educations.each do |employee_education| %>
+      <tr>
+        <td><%= employee_education.employee_id %></td>
+        <td><%= employee_education.education_id %></td>
+        <td><%= link_to 'Show', employee_education %></td>
+        <td><%= link_to 'Edit', edit_employee_education_path(employee_education) %></td>
+        <td><%= link_to 'Destroy', employee_education, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Employee education', new_employee_education_path %>

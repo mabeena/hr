@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  title: MyString
+  comany: MyString
+  startdate: 2015-02-08
+  enddate: 2015-02-08
+  field: MyString
+  employee_id: 1
+
+two:
+  title: MyString
+  comany: MyString
+  startdate: 2015-02-08
+  enddate: 2015-02-08
+  field: MyString
+  employee_id: 1

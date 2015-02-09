@@ -1,0 +1,2 @@
+module EmployeeEducationsHelper
+end
