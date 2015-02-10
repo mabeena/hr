@@ -1,4 +1,4 @@
 class EmployeeSkill < ActiveRecord::Base
-	belongs_to :employees
-	belongs_to :skills
+	belongs_to :employee
+	belongs_to :skill
 end
