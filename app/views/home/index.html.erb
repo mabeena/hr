@@ -1,23 +1,16 @@
 <% if employee_signed_in? %>
-<div id="evaluator">
-	<div class= "navi">
-		<div class= "weak">
-		<ul>
-			<li><%= link_to 'home', root_path %></li>
-			<li><%= link_to 'link 2', root_path %></li>
-			<li><%= link_to 'link 3', root_path %></li>
-		</ul>
-		</div>
-		<div class= "strong">
-			<%= link_to 'logout', destroy_employee_session_path, :method => :delete %>
-		</div>
-	</div>
-	-- Evaluator Page Here -- <br />
-	Experience<br />
-	Education<br />
-	Skills<br />
-	etc
-</div>
+<section class= "top-left">
+		<h1><%= link_to 'education', educations_path %></h1>
+</section>
+<section class= "top-right">
+		<h1><%= link_to 'skill', skills_path %></h1>
+</section>
+<section class= "bottom-left">
+		<h1><%= link_to 'training', trainings_path %></h1>
+</section>
+<section class= "bottom-right">
+		<h1><%= link_to 'positions', positions_path %></h1>
+</section>
 <% else %>
 <div id="header">
 	<h1><span>HR Promotion</span> DSS</h1>

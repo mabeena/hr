@@ -7,8 +7,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<div id="hr">
+		<div class= "navi">
+			<div class= "weak">
+				<ul>
+					<li><%= link_to 'home', root_path %></li>
+					<li><%= link_to 'evaluations', evaluations_path %></li>
+					<li><%= link_to 'experience', experiences_path %></li>
+					<li><%= link_to 'skill', employee_skills_path %></li>
+					<li><%= link_to 'training', employee_trainings_path %></li>
+					<li><%= link_to 'education', employee_educations_path %></li>
+				</ul>
+			</div>
+			<div class= "strong">
+				<%= link_to 'logout', destroy_employee_session_path, :method => :delete %>
+			</div>
+		</div>
+	<%= yield %>
+	</div>
 </body>
 </html>
