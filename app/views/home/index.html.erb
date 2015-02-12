@@ -1,2 +1,53 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<% if employee_signed_in? %>
+<div id="evaluator">
+	<div class= "navi">
+		<div class= "weak">
+		<ul>
+			<li><%= link_to 'home', root_path %></li>
+			<li><%= link_to 'link 2', root_path %></li>
+			<li><%= link_to 'link 3', root_path %></li>
+		</ul>
+		</div>
+		<div class= "strong">
+			<%= link_to 'logout', destroy_employee_session_path, :method => :delete %>
+		</div>
+	</div>
+	-- Evaluator Page Here -- <br />
+	Experience<br />
+	Education<br />
+	Skills<br />
+	etc
+</div>
+<% else %>
+<div id="header">
+	<h1><span>HR Promotion</span> DSS</h1>
+	<div id="userAuth">
+		<div class="register">
+			<%= form_for(:employee, :url => registration_path(:employee)) do |f| %>
+				<h2>sign-up</h2>
+					<p><%= f.label :name %></p>
+					<p><%= f.text_field :fname %>&nbsp;<%= f.text_field :lname %></p>
+					<p><%= f.label :email %></p>
+					<p><%= f.email_field :email %></p>
+					<p><%= f.label :password %></p>
+					<p><%= f.password_field :password, autocomplete: "off" %></p>
+					<p><%= f.label :password_comfirmation %></p>
+					<p><%= f.password_field :password_confirmation, autocomplete: "off" %></p><br />
+					<%= f.submit "join" %>
+			<% end %>
+		</div>	
+		<div class="login">
+			<%= form_for(:employee, :url => session_path(:employee)) do |f| %>
+			<h2>sign-in</h2>
+				<p><%= f.label :email %></p>
+				<p><%= f.email_field :email, autofocus: true %></p>
+
+				<p><%= f.label :password %></p>
+				<p><%= f.password_field :password, autocomplete: "off" %></p><br />
+
+				<%= f.submit "login" %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<% end %>
