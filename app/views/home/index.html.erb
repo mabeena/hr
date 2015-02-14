@@ -7,6 +7,7 @@
 </section>
 <section class= "bottom-left">
 		<h1><%= link_to 'training', trainings_path %></h1>
+
 </section>
 <section class= "bottom-right">
 		<h1><%= link_to 'positions', positions_path %></h1>
@@ -22,10 +23,11 @@
 					<p><%= f.text_field :fname %>&nbsp;<%= f.text_field :lname %></p>
 					<p><%= f.label :email %></p>
 					<p><%= f.email_field :email %></p>
-					<p><%= f.label :password %></p>
-					<p><%= f.password_field :password, autocomplete: "off" %></p>
-					<p><%= f.label :password_comfirmation %></p>
-					<p><%= f.password_field :password_confirmation, autocomplete: "off" %></p><br />
+					<p><%= f.label :password %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<%= f.label :confirmation %></p>
+					<p><%= f.password_field :password, autocomplete: "off" %>&nbsp;
+					<%= f.password_field :password_confirmation, autocomplete: "off" %></p><br />
 					<%= f.submit "join" %>
 			<% end %>
 		</div>	

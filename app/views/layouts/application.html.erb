@@ -7,6 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if employee_signed_in? %>
 	<div id="hr">
 		<div class= "navi">
 			<div class= "weak">
@@ -20,9 +21,15 @@
 				</ul>
 			</div>
 			<div class= "strong">
-				<%= link_to 'logout', destroy_employee_session_path, :method => :delete %>
+			<% if employee_signed_in? %>
+				<p class="userside">Signed in as <%= current_employee.fname.humanize %> |
+				<%= link_to 'logout', destroy_employee_session_path, :method => :delete %> </p>
+			<% else %>
+			<% end %>
 			</div>
 		</div>
+<% else %>
+<% end %>
 	<%= yield %>
 	</div>
 </body>
