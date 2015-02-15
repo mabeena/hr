@@ -19,15 +19,13 @@
 		<div class="register">
 			<%= form_for(:employee, :url => registration_path(:employee)) do |f| %>
 				<h2>sign-up</h2>
-					<p><%= f.label :name %></p>
-					<p><%= f.text_field :fname %>&nbsp;<%= f.text_field :lname %></p>
-					<p><%= f.label :email %></p>
-					<p><%= f.email_field :email %></p>
-					<p><%= f.label :password %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<%= f.label :confirmation %></p>
-					<p><%= f.password_field :password, autocomplete: "off" %>&nbsp;
-					<%= f.password_field :password_confirmation, autocomplete: "off" %></p><br />
+					<p><%= f.text_field :fname, :placeholder => "first name" %>&nbsp;
+					<%= f.text_field :lname, :placeholder => "last name" %></p>
+					<p><%= f.email_field :email, :placeholder => "email@dell.com" %></p>
+					<p><%= f.password_field :password, :placeholder => "password", autocomplete: "off" %>&nbsp;
+					<%= f.password_field :password_confirmation, :placeholder => "confirm", autocomplete: "off" %></p>
+					<p><%= f.select :role, Employee::ROLE_TYPES, :prompt => "Role" %>&nbsp;
+					<%= f.select :level, Employee::LEVEL_TYPES, :prompt => "Grade" %></p><br />
 					<%= f.submit "join" %>
 			<% end %>
 		</div>	
