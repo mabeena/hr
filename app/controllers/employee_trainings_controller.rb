@@ -6,6 +6,7 @@ class EmployeeTrainingsController < ApplicationController
   def index
     @employee_trainings = EmployeeTraining.all
     respond_with(@employee_trainings)
+    
   end
 
   def show

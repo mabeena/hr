@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Education.create(:degree =>"bachelors", :concentration =>"computer science")
+Skill.create(:name =>"excel", :level=>"intermediate")
+Training.create(:name =>"network+")
+Position.create(:name =>"insider sales coach")

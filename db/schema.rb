@@ -15,10 +15,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
 
   create_table "educations", force: true do |t|
     t.string   "degree"
-    t.string   "institution"
     t.string   "concentration"
-    t.date     "edate"
-    t.string   "completed"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -40,7 +37,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
   create_table "employee_trainings", force: true do |t|
     t.integer  "employee_id"
     t.integer  "training_id"
-    t.date     "certification"
+    t.date     "tdate"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -100,7 +97,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
 
   create_table "skills", force: true do |t|
     t.string   "name"
-    t.integer  "years"
+    t.integer  "level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -3,7 +3,7 @@ class CreateEmployeeTrainings < ActiveRecord::Migration
     create_table :employee_trainings do |t|
       t.integer :employee_id
       t.integer :training_id
-      t.date :certification
+      t.date :tdate
 
       t.timestamps
     end
