@@ -5,7 +5,11 @@ class EducationsController < ApplicationController
 
   def index
     @educations = Education.all
-    respond_with(@educations)
+    @ged = Education.where(degree: "diploma/GED")
+    @bachelor = Education.where(degree: "bachelor's")
+    @master = Education.where(degree: "master's")
+    @education = Education.new
+    respond_with(@education)
   end
 
   def show
@@ -23,7 +27,7 @@ class EducationsController < ApplicationController
   def create
     @education = Education.new(education_params)
     @education.save
-    respond_with(@education)
+    redirect_to educations_url
   end
 
   def update

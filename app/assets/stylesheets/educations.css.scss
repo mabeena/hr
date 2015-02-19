@@ -1,3 +1,12 @@
 // Place all the styles related to the educations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#ged, #bachelor, #master {
+	width: 33.3%;
+	float: left;
+	height: 80%;
+	border-bottom: 1px solid black;
+}
+
+
