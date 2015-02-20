@@ -20,9 +20,7 @@
 </div>
 
 <%= form_for(@education) do |f| %>  
-    <%= f.label :degree %>
-    <%= f.text_field :degree %>
-    <%= f.label :concentration %>
-    <%= f.text_field :concentration %>  
+    <%= f.select :degree, Education::ED_TYPES %>
+    <%= f.text_field :concentration, :placeholder => "concentration" %>  
     <%= f.submit %>
 <% end %>
