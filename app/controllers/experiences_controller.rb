@@ -1,10 +1,12 @@
 class ExperiencesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_experience, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
     @experiences = Experience.all
+    @experience = Experience.new
     respond_with(@experiences)
   end
 
@@ -42,6 +44,6 @@ class ExperiencesController < ApplicationController
     end
 
     def experience_params
-      params.require(:experience).permit(:title, :comany, :startdate, :enddate, :field, :employee_id)
+      params.require(:experience).permit(:title, :company, :startdate, :enddate, :field, :employee_id)
     end
 end

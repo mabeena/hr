@@ -67,7 +67,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
   create_table "evaluations", force: true do |t|
     t.date     "sdate"
     t.date     "edate"
-    t.integer  "commrunication"
+    t.integer  "communication"
     t.integer  "attitude"
     t.integer  "character"
     t.integer  "potential"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
 
   create_table "experiences", force: true do |t|
     t.string   "title"
-    t.string   "comany"
+    t.string   "company"
     t.date     "startdate"
     t.date     "enddate"
     t.string   "field"
@@ -97,7 +97,8 @@ ActiveRecord::Schema.define(version: 20150209003116) do
 
   create_table "skills", force: true do |t|
     t.string   "name"
-    t.integer  "level"
+    t.string   "level"
+    t.string   "stype"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

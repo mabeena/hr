@@ -3,7 +3,7 @@ class CreateEvaluations < ActiveRecord::Migration
     create_table :evaluations do |t|
       t.date :sdate
       t.date :edate
-      t.integer :commrunication
+      t.integer :communication
       t.integer :attitude
       t.integer :character
       t.integer :potential

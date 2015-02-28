@@ -1,4 +1,5 @@
 class EmployeeTrainingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_employee_training, only: [:show, :edit, :update, :destroy]
 
   respond_to :html

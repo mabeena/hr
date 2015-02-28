@@ -18,9 +18,4 @@
 		<p><%= master.concentration %></p>
 	<% end %>
 </div>
-
-<%= form_for(@education) do |f| %>  
-    <%= f.select :degree, Education::ED_TYPES %>
-    <%= f.text_field :concentration, :placeholder => "concentration" %>  
-    <%= f.submit %>
-<% end %>
+<%= render 'form' %>

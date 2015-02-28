@@ -1,16 +1,15 @@
 <% if employee_signed_in? %>
 <section class= "top-left">
-		<h1><%= link_to 'education', educations_path %></h1>
+	<h1><%= link_to 'education', educations_path %></h1>
 </section>
 <section class= "top-right">
-		<h1><%= link_to 'skill', skills_path %></h1>
+	<h1><%= link_to 'skill', skills_path %></h1>
 </section>
 <section class= "bottom-left">
-		<h1><%= link_to 'training', trainings_path %></h1>
-
+	<h1><%= link_to 'training', trainings_path %></h1>
 </section>
 <section class= "bottom-right">
-		<h1><%= link_to 'positions', positions_path %></h1>
+	<h1><%= link_to 'positions', positions_path %></h1>
 </section>
 <% else %>
 <div id="header">
@@ -32,12 +31,8 @@
 		<div class="login">
 			<%= form_for(:employee, :url => session_path(:employee)) do |f| %>
 			<h2>sign-in</h2>
-				<p><%= f.label :email %></p>
-				<p><%= f.email_field :email, autofocus: true %></p>
-
-				<p><%= f.label :password %></p>
-				<p><%= f.password_field :password, autocomplete: "off" %></p><br />
-
+				<p><%= f.email_field :email, :placeholder => "email@dell.com", autofocus: true %></p>
+				<p><%= f.password_field :password, :placeholder => "password", autocomplete: "off" %></p><br />
 				<%= f.submit "login" %>
 			<% end %>
 		</div>

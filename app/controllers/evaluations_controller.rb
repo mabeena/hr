@@ -1,4 +1,5 @@
 class EvaluationsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
@@ -42,6 +43,6 @@ class EvaluationsController < ApplicationController
     end
 
     def evaluation_params
-      params.require(:evaluation).permit(:sdate, :edate, :commrunication, :attitude, :character, :potential, :performance, :employee_id, :position_id)
+      params.require(:evaluation).permit(:sdate, :edate, :communication, :attitude, :character, :potential, :performance, :employee_id, :position_id)
     end
 end

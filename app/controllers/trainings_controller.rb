@@ -1,11 +1,13 @@
 class TrainingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_training, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
     @trainings = Training.all
-    respond_with(@trainings)
+    @training = Training.new
+    respond_with(@training)
   end
 
   def show
@@ -23,7 +25,7 @@ class TrainingsController < ApplicationController
   def create
     @training = Training.new(training_params)
     @training.save
-    respond_with(@training)
+    redirect_to trainings_url
   end
 
   def update

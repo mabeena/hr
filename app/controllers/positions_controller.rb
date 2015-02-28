@@ -1,11 +1,13 @@
 class PositionsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_position, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
     @positions = Position.all
-    respond_with(@positions)
+    @position = Position.new
+    respond_with(@position)
   end
 
   def show
@@ -23,7 +25,7 @@ class PositionsController < ApplicationController
   def create
     @position = Position.new(position_params)
     @position.save
-    respond_with(@position)
+    redirect_to positions_url
   end
 
   def update

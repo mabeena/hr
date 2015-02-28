@@ -1,27 +1,33 @@
-<h1>Listing skills</h1>
+<div id="skills">
+	<div class="leftside">
+	<h2>Beginner</h2>
+		<% @techbeg.each do |techbeg| %>
+			<%= techbeg.name %>
+		<% end %>
+	<h2>Intermediate</h2>
+		<% @techint.each do |techint| %>
+			<%= techint.name %>
+		<% end %>
+	<h2>Advanced</h2>
+		<% @techadv.each do |techadv| %>
+			<%= techadv.name %>
+		<% end %>
+	</div>
+	<div class="rightside">
+	<h2>Beginner</h2>
+		<% @nontechbeg.each do |nontechbeg| %>
+			<%= nontechbeg.name %>
+		<% end %>
+	<h2>Intermediate</h2>
+		<% @nontechint.each do |nontechint| %>
+			<%= nontechint.name %>
+		<% end %>
+	<h2>Advanced</h2>
+		<% @nontechadv.each do |nontechadv| %>
+			<%= nontechadv.name %>
+		<% end %>
+	</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Years</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<%= render 'form' %>
 
-  <tbody>
-    <% @skills.each do |skill| %>
-      <tr>
-        <td><%= skill.name %></td>
-        <td><%= skill.level %></td>
-        <td><%= link_to 'Show', skill %></td>
-        <td><%= link_to 'Edit', edit_skill_path(skill) %></td>
-        <td><%= link_to 'Destroy', skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Skill', new_skill_path %>
+</div>

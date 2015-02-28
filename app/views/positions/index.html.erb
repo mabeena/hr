@@ -1,25 +1,8 @@
-<h1>Listing positions</h1>
+<div id="positions">
+<% @positions.each do |position| %>
+	<%= position.name %>
+<% end %>
+    
+<%= render 'form' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @positions.each do |position| %>
-      <tr>
-        <td><%= position.name %></td>
-        <td><%= link_to 'Show', position %></td>
-        <td><%= link_to 'Edit', edit_position_path(position) %></td>
-        <td><%= link_to 'Destroy', position, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Position', new_position_path %>
+</div>    
