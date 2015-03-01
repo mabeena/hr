@@ -37,113 +37,34 @@ Education.create(:degree =>"master's", :concentration =>"project management")
 
 #----------------------------------------------------
 #SKILL TABLE
-Skill.create(:name =>"java", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"java", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"java", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"excel", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"excel", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"excel", :level=>"advanced", :stype=>"technical")
+Skill.create(:name =>"java", :stype=>"technical")
+Skill.create(:name =>"excel", :stype=>"technical")
 #put 25 more skill sets here
-Skill.create(:name =>"Business Intelligence", :level=>"beginner", :stype=>"non-technical")
-Skill.create(:name =>"Business Intelligence", :level=>"intermediate", :stype=>"non-technical")
-Skill.create(:name =>"Business Intelligence", :level=>"advanced", :stype=>"non-technical")
-
-Skill.create(:name =>"SQl Server 2012", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"SQl Server 2012", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"SQl Server 2012", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"php", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"php", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"php", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"C#", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"C#", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"C#", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"VB.Net", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"VB.Net", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"VB.Net", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Oracle 12c", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Oracle 12c", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Oracle 12c", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"SAP", :level=>"beginner", :stype=>"non-technical")
-Skill.create(:name =>"SAP", :level=>"intermediate", :stype=>"non-technical")
-Skill.create(:name =>"SAP", :level=>"advanced", :stype=>"non-technical")
-
-Skill.create(:name =>"Ruby on Rails", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Ruby on Rails", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Ruby on Rails", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"project management", :level=>"beginner", :stype=>"non-technical")
-Skill.create(:name =>"project management", :level=>"intermediate", :stype=>"non-technical")
-Skill.create(:name =>"project management", :level=>"advanced", :stype=>"non-technical")
-
-Skill.create(:name =>"HTML5/CSS3", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"HTML5/CSS3", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"HTML5/CSS3", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Webservices", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Webservices", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Webservices", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"QTP", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"QTP", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"QTP", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Selenium", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Selenium", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Selenium", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"MySQL", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"MySQL", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"MySQL", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Leadership", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Leadership", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Leadership", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"ASP.Net", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"ASP.Net", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"ASP.Net", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"XML", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"XML", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"XML", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Data Warehousing", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Data Warehousing", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Data Warehousing", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Agile Testing", :level=>"beginner", :stype=>"non-technical")
-Skill.create(:name =>"Agile Testing", :level=>"intermediate", :stype=>"non-technical")
-Skill.create(:name =>"Agile Testing", :level=>"advanced", :stype=>"non-technical")
-
-Skill.create(:name =>"Performance Testing", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Performance Testing", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Performance Testing", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Strategic Planning", :level=>"beginner", :stype=>"non-technical")
-Skill.create(:name =>"Strategic Planning", :level=>"intermediate", :stype=>"non-technical")
-Skill.create(:name =>"Strategic Planning", :level=>"advanced", :stype=>"non-technical")
-
-Skill.create(:name =>"Javascript", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Javascript", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Javascript", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"AJAX", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"AJAX", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"AJAX", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Python", :level=>"beginner", :stype=>"technical")
-Skill.create(:name =>"Python", :level=>"intermediate", :stype=>"technical")
-Skill.create(:name =>"Python", :level=>"advanced", :stype=>"technical")
-
-Skill.create(:name =>"Adobe", :level=>"beginner", :stype=>"non-technical")
-Skill.create(:name =>"Adobe", :level=>"intermediate", :stype=>"non-technical")
-Skill.create(:name =>"Adobe", :level=>"advanced", :stype=>"non-technical")
+Skill.create(:name =>"Business Intelligence", :stype=>"non-technical")
+Skill.create(:name =>"SQl Server 2012", :stype=>"technical")
+Skill.create(:name =>"php", :stype=>"technical")
+Skill.create(:name =>"C#", :stype=>"technical")
+Skill.create(:name =>"VB.Net", :stype=>"technical")
+Skill.create(:name =>"Oracle 12c", :stype=>"technical")
+Skill.create(:name =>"SAP", :stype=>"non-technical")
+Skill.create(:name =>"Ruby on Rails", :stype=>"technical")
+Skill.create(:name =>"project management", :stype=>"non-technical")
+Skill.create(:name =>"HTML5/CSS3", :stype=>"technical")
+Skill.create(:name =>"Webservices", :stype=>"technical")
+Skill.create(:name =>"QTP", :stype=>"technical")
+Skill.create(:name =>"Selenium", :stype=>"technical")
+Skill.create(:name =>"MySQL", :stype=>"technical")
+Skill.create(:name =>"Leadership", :stype=>"technical")
+Skill.create(:name =>"ASP.Net", :stype=>"technical")
+Skill.create(:name =>"XML", :stype=>"technical")
+Skill.create(:name =>"Data Warehousing", :stype=>"technical")
+Skill.create(:name =>"Agile Testing", :stype=>"non-technical")
+Skill.create(:name =>"Performance Testing", :stype=>"technical")
+Skill.create(:name =>"Strategic Planning", :stype=>"non-technical")
+Skill.create(:name =>"Javascript", :stype=>"technical")
+Skill.create(:name =>"AJAX", :stype=>"technical")
+Skill.create(:name =>"Python", :stype=>"technical")
+Skill.create(:name =>"Adobe", :stype=>"non-technical")
 
 
 #----------------------------------------------------

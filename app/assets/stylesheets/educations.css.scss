@@ -3,17 +3,17 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 #ged, #bachelor, #master {
-	width: 33.3%;
+	width: 30%;
 	float: left;
 	text-align: center;
 	height: 85%;
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #fff;
 	h1{
 		margin: 0;
 		background-color: #f95252;
-		border: 1px solid black;
 		padding: 10px 0 10px 0;
 		width:100%;
+		border-top: 1px solid #fff;
 	}
 	p {
 		text-align: left;
@@ -29,10 +29,10 @@
 }
 #new_education {
 	text-align: center;
-	background-color: black;
+	background-color: #656464;
 	height: 100%;
 	input[type="text"] {
-		border: 1px solid black;
+		border: 1px solid #fff;
 		width: 228px;
 		height: 50px;
 		font-size: 25px;
@@ -49,9 +49,9 @@
 	}
 	select{
 		width: 228px;
-		height: 50px;
+		height: 54px;
 		font-size: 25px;
 		padding-left: 5px;
-		border: 1px solid black;
+		border: 1px solid #fff;
 	}
 }

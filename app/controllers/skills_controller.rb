@@ -5,12 +5,8 @@ class SkillsController < ApplicationController
   respond_to :html
 
   def index
-    @techbeg = Skill.where(stype: "technical").where(level: "beginner")
-    @techint = Skill.where(stype: "technical").where(level: "intermediate")
-    @techadv = Skill.where(stype: "technical").where(level: "advanced")
-    @nontechbeg = Skill.where(stype: "non-technical").where(level: "beginner")
-    @nontechint = Skill.where(stype: "non-technical").where(level: "intermediate")
-    @nontechadv = Skill.where(stype: "non-technical").where(level: "advanced")
+    @tech = Skill.where(stype: "technical").order(name: :asc)
+    @nontech = Skill.where(stype: "non-technical").order(name: :asc)
     @skill = Skill.new
     respond_with(@skills)
   end
@@ -49,6 +45,6 @@ class SkillsController < ApplicationController
     end
 
     def skill_params
-      params.require(:skill).permit(:name, :level, :stype)
+      params.require(:skill).permit(:name, :stype)
     end
 end

@@ -1,30 +1,22 @@
+<div id="supportnavi">
+	<ul>
+		<li><%= link_to 'Add Educations', educations_path %></li>
+		<li class="current"><%= link_to 'Add Skills', skills_path %></li>
+		<li><%= link_to 'Add Trainings', trainings_path %></li>
+		<li><%= link_to 'Add Positions', positions_path %></li>
+	</ul>
+</div>
 <div id="skills">
 	<div class="leftside">
-	<h2>Beginner</h2>
-		<% @techbeg.each do |techbeg| %>
-			<%= techbeg.name %>
-		<% end %>
-	<h2>Intermediate</h2>
-		<% @techint.each do |techint| %>
-			<%= techint.name %>
-		<% end %>
-	<h2>Advanced</h2>
-		<% @techadv.each do |techadv| %>
-			<%= techadv.name %>
+	<h2>Technical</h2>
+		<% @tech.each do |tech| %>
+			<p><%= tech.name %></p>
 		<% end %>
 	</div>
 	<div class="rightside">
-	<h2>Beginner</h2>
-		<% @nontechbeg.each do |nontechbeg| %>
-			<%= nontechbeg.name %>
-		<% end %>
-	<h2>Intermediate</h2>
-		<% @nontechint.each do |nontechint| %>
-			<%= nontechint.name %>
-		<% end %>
-	<h2>Advanced</h2>
-		<% @nontechadv.each do |nontechadv| %>
-			<%= nontechadv.name %>
+	<h2>Non-Technical</h2>
+		<% @nontech.each do |nontech| %>
+			<p><%= nontech.name %></p>
 		<% end %>
 	</div>
 

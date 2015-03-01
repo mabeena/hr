@@ -1,3 +1,11 @@
+<div id="supportnavi">
+	<ul>
+		<li class="current"><%= link_to 'Add Educations', educations_path %></li>
+		<li><%= link_to 'Add Skills', skills_path %></li>
+		<li><%= link_to 'Add Trainings', trainings_path %></li>
+		<li><%= link_to 'Add Positions', positions_path %></li>
+	</ul>
+</div>
 <div id="ged">
 	<h1>High School</h1>
 	<% @ged.each do |ged| %>
@@ -18,4 +26,5 @@
 		<p><%= master.concentration %></p>
 	<% end %>
 </div>
+
 <%= render 'form' %>

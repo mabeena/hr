@@ -67,3 +67,35 @@ div {
     list-style: square;
   }
 }
+#supportnavi{
+	width: 10%;
+	height: 85%;
+	margin: 0;
+	float: left;
+	ul{
+	    list-style-type: none;
+   		margin: 0;
+    	padding: 0;
+    	border-top: 1px solid white;
+    	border-bottom: 1px solid white;
+    	li{
+    		width: 100%;
+    	}
+		a{
+		    display: block;
+    		width: 100%;
+    		color: white;
+    		text-decoration: none;
+    		padding: 15px 0 15px 5px;
+    		font-size: 18px;
+    		font-weight: bold;
+    		border-bottom: 1px solid #fff;
+		}
+		.current{
+		    background-color: #b8b8b8;
+		}
+		li:hover{
+		    background-color: #b8b8b8;
+		}
+	}
+}

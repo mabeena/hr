@@ -7,8 +7,8 @@ class EducationsController < ApplicationController
   def index
     @educations = Education.all
     @ged = Education.where(degree: "diploma/GED")
-    @bachelor = Education.where(degree: "bachelor's")
-    @master = Education.where(degree: "master's")
+    @bachelor = Education.where(degree: "bachelor's").order(concentration: :asc)
+    @master = Education.where(degree: "master's").order(concentration: :asc)
     @education = Education.new
     respond_with(@education)
   end

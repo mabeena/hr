@@ -1,6 +1,5 @@
 <%= form_for(@skill) do |f| %>
     <%= f.text_field :name, :placeholder => "skill" %>  
-    <%= f.select :level, Skill::SKILL_LEVELS %>
     <%= f.select :stype, Skill::SKILL_TYPES %>
     <%= f.submit %>
 <% end %>
