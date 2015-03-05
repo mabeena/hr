@@ -1,15 +1,23 @@
 <% if employee_signed_in? %>
+<div id="supportnavi">
+	<ul>
+		<li><%= link_to 'Add Educations', educations_path %></li>
+		<li><%= link_to 'Add Skill-Sets', skills_path %></li>
+		<li><%= link_to 'Add Trainings', trainings_path %></li>
+		<li><%= link_to 'Add Positions', positions_path %></li>
+	</ul>
+</div>
 <section class= "top-left">
-	<h1><%= link_to 'education', educations_path %></h1>
+	<h1></h1>
 </section>
 <section class= "top-right">
-	<h1><%= link_to 'skill', skills_path %></h1>
+	<h1></h1>
 </section>
 <section class= "bottom-left">
-	<h1><%= link_to 'training', trainings_path %></h1>
+	<h1></h1>
 </section>
 <section class= "bottom-right">
-	<h1><%= link_to 'positions', positions_path %></h1>
+	<h1></h1>
 </section>
 <% else %>
 <div id="header">

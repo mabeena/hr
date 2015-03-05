@@ -1,4 +1,5 @@
 <%= form_for(@position) do |f| %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, :placeholder => "position name" %>
+    <%= f.select :segment, Position::SEGMENT_TYPE %>
     <%= f.submit %>
 <% end %>

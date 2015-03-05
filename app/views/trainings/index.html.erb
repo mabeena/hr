@@ -1,7 +1,17 @@
+<div id="supportnavi">
+	<ul>
+		<li><%= link_to 'Add Educations', educations_path %></li>
+		<li><%= link_to 'Add Skill-Sets', skills_path %></li>
+		<li class="current"><%= link_to 'Add Trainings', trainings_path %></li>
+		<li><%= link_to 'Add Positions', positions_path %></li>
+	</ul>
+</div>
 <div id="trainings">
-<% @trainings.each do |training| %>
-<%= training.name %>
-<% end %>
-
+	<div class="main">
+	<h2>Available Training</h2>
+		<% @trainings.each do |training| %>
+			<%= training.name %>
+		<% end %>
+	</div>
 <%= render 'form' %>
 </div>

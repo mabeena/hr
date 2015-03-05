@@ -4,4 +4,47 @@
 #trainings{
 	height: 100%;
 	width: 100%;
+	h2{
+		margin: 0;
+		background-color: #f95252;
+		border-top: 1px solid #fff;
+		padding: 10px 0 10px 0;
+		width:100%;
+		color: #fff;
+	}
+	.main{
+		width: 90%;
+		height: 85%;
+		float: left;
+		border-bottom: 1px solid #fff;
+		background-color: #F3F9FB;
+		p {
+			margin: 0;
+			padding: 5px 0 0 18px;
+			width: 30%;
+			float: left;
+			font-size: 18px;
+		}
+	}
+	#new_training {
+		text-align: center;
+		background-color: #656464;
+		height: 100%;
+		input[type="text"] {
+			border: 1px solid #fff;
+			width: 228px;
+			height: 50px;
+			font-size: 25px;
+			padding-left: 5px;
+			margin-top: 5px;
+		}
+		input[type="submit"]  {
+			background-color: #33cc77;
+			color: #fff;
+			width: 228px;
+			height: 55px;
+			cursor: pointer;
+			font-size: 24px;
+		}
+	}
 }

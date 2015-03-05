@@ -91,6 +91,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
 
   create_table "positions", force: true do |t|
     t.string   "name"
+    t.string   "segment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

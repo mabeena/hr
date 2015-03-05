@@ -1,29 +1,29 @@
 <div id="supportnavi">
 	<ul>
 		<li class="current"><%= link_to 'Add Educations', educations_path %></li>
-		<li><%= link_to 'Add Skills', skills_path %></li>
+		<li><%= link_to 'Add Skill-Sets', skills_path %></li>
 		<li><%= link_to 'Add Trainings', trainings_path %></li>
 		<li><%= link_to 'Add Positions', positions_path %></li>
 	</ul>
 </div>
 <div id="ged">
-	<h1>High School</h1>
+	<h1>High School or GED</h1>
 	<% @ged.each do |ged| %>
-		<p><%= ged.concentration %></p>
+		<p><%= ged.conName %></p>
 	<% end %>
 </div>
 
 <div id="bachelor">
 	<h1>Bachelor's</h1>
 	<% @bachelor.each do |bachelor| %>
-		<p><%= bachelor.concentration %></p>
+		<p><%= bachelor.conName %></p>
 	<% end %>
 </div>
 
 <div id="master">
 	<h1>Master's</h1>
 	<% @master.each do |master| %>
-		<p><%= master.concentration %></p>
+		<p><%= master.conName %></p>
 	<% end %>
 </div>
 

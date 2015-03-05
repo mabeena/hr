@@ -4,4 +4,61 @@
 #positions{
 	height: 100%;
 	width: 100%;
+	.topleft, .topmid, .topright, .botleft, .botmid, .botright {
+		width: 30%;
+		float: left;
+		text-align: center;
+		height: 42.5%;
+		border-bottom: 1px solid #fff;
+		overflow-y: scroll;
+		h2{
+			margin: 0;
+			background-color: #f95252;
+			padding: 20px 0 10px 0;
+			width:100%;
+			color: #fff;
+			border-top: 1px solid #fff;
+		}
+		p {
+			margin: 0;
+			padding-top: 5px;
+			width: 33%;
+			float: left;
+			font-size: 12px;
+		}
+	}
+}
+.topleft, .topright, .botmid {
+	background-color: #fff;
+}
+.botleft, .topmid, .botright {
+	background-color: #F3F9FB;
+}
+#new_position {
+	text-align: center;
+	background-color: #656464;
+	height: 100%;
+	input[type="text"] {
+		border: 1px solid #fff;
+		width: 228px;
+		height: 50px;
+		font-size: 25px;
+		padding-left: 5px;
+		margin-top: 5px;
+	}
+	input[type="submit"]  {
+		background-color: #33cc77;
+		color: #fff;
+		width: 228px;
+		height: 55px;
+		cursor: pointer;
+		font-size: 24px;
+	}
+	select{
+		width: 228px;
+		height: 54px;
+		font-size: 25px;
+		padding-left: 5px;
+		border: 1px solid #fff;
+	}
 }

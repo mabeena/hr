@@ -1,7 +1,7 @@
 <div id="supportnavi">
 	<ul>
 		<li><%= link_to 'Add Educations', educations_path %></li>
-		<li class="current"><%= link_to 'Add Skills', skills_path %></li>
+		<li class="current"><%= link_to 'Add Skill-Sets', skills_path %></li>
 		<li><%= link_to 'Add Trainings', trainings_path %></li>
 		<li><%= link_to 'Add Positions', positions_path %></li>
 	</ul>
@@ -10,13 +10,13 @@
 	<div class="leftside">
 	<h2>Technical</h2>
 		<% @tech.each do |tech| %>
-			<p><%= tech.name %></p>
+			<p><%= tech.skillName %></p>
 		<% end %>
 	</div>
 	<div class="rightside">
 	<h2>Non-Technical</h2>
 		<% @nontech.each do |nontech| %>
-			<p><%= nontech.name %></p>
+			<p><%= nontech.skillName %></p>
 		<% end %>
 	</div>
 
