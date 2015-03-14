@@ -5,7 +5,10 @@ class EmployeeSkillsController < ApplicationController
   respond_to :html
 
   def index
+  	@employees = Employee.all
+  	@skills = Skill.all
     @employee_skills = EmployeeSkill.all
+    @employee_skill = EmployeeSkill.new
     respond_with(@employee_skills)
   end
 
@@ -24,7 +27,7 @@ class EmployeeSkillsController < ApplicationController
   def create
     @employee_skill = EmployeeSkill.new(employee_skill_params)
     @employee_skill.save
-    respond_with(@employee_skill)
+    redirect_to employee_skills_url
   end
 
   def update
@@ -43,6 +46,6 @@ class EmployeeSkillsController < ApplicationController
     end
 
     def employee_skill_params
-      params.require(:employee_skill).permit(:employee_id, :skill_id)
+      params.require(:employee_skill).permit(:employee_id, :skill_id, :level)
     end
 end

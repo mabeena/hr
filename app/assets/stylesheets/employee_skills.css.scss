@@ -1,3 +1,21 @@
 // Place all the styles related to the employee_skills controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#new_employee_skill {
+	text-align: center;
+	select{
+		width: 275px;
+		height: 54px;
+		font-size: 25px;
+		padding-left: 5px;
+		border: 1px solid #fff;
+	}
+	input[type="submit"]  {
+		background-color: #33cc77;
+		color: #fff;
+		width: 275px;
+		height: 55px;
+		cursor: pointer;
+		font-size: 24px;
+	}
+}

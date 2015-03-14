@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
 			devise_parameter_sanitizer.for(:account_update) { |u| u.permit(:email, :password, :password_confirmation, :fname, :lname, :level, :role) }
 		end
 		def employee_params
-			params.require(:employee).permit(:email, :password, :password_confirmation, :email, :password, :password_confirmation, :fname, :lname, :level, :role)
+			params.require(:employee).permit(:email, :password, :password_confirmation, :fname, :lname, :level, :role)
 		end
 
   	protected

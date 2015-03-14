@@ -5,7 +5,8 @@ class TrainingsController < ApplicationController
   respond_to :html
 
   def index
-    @trainings = Training.all
+    @techie = Training.where(ttype: "technical").order(name: :asc)
+    @biz = Training.where(ttype: "business").order(name: :asc)
     @training = Training.new
     respond_with(@training)
   end
@@ -44,6 +45,6 @@ class TrainingsController < ApplicationController
     end
 
     def training_params
-      params.require(:training).permit(:name)
+      params.require(:training).permit(:name, :ttype)
     end
 end

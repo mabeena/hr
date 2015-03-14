@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
   create_table "employee_skills", force: true do |t|
     t.integer  "employee_id"
     t.integer  "skill_id"
+    t.string   "level"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -106,6 +107,7 @@ ActiveRecord::Schema.define(version: 20150209003116) do
 
   create_table "trainings", force: true do |t|
     t.string   "name"
+    t.string   "ttype"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

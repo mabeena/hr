@@ -5,8 +5,11 @@ class EmployeeEducationsController < ApplicationController
   respond_to :html
 
   def index
-    @employee_educations = EmployeeEducation.all
-    respond_with(@employee_educations)
+  	@employees = Employee.all
+  	@educations = Education.all
+  	@employee_educations = EmployeeEducation.all
+    @employee_education = EmployeeEducation.new
+    respond_with(@employee_education)
   end
 
   def show
@@ -24,7 +27,7 @@ class EmployeeEducationsController < ApplicationController
   def create
     @employee_education = EmployeeEducation.new(employee_education_params)
     @employee_education.save
-    respond_with(@employee_education)
+    redirect_to employee_educations_url
   end
 
   def update

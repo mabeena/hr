@@ -6,4 +6,7 @@ class Education < ActiveRecord::Base
 	def conName
 		concentration.humanize
 	end
+	def education_name
+		degree + ' ' + concentration
+	end
 end

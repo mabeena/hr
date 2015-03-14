@@ -7,10 +7,16 @@
 	</ul>
 </div>
 <div id="trainings">
-	<div class="main">
-	<h2>Available Training</h2>
-		<% @trainings.each do |training| %>
-			<%= training.name %>
+	<div class="techie">
+	<h2>Technical Training</h2>
+		<% @techie.each do |tech| %>
+			<p><%= tech.name %></p>
+		<% end %>
+	</div>
+	<div class="biz">
+	<h2>Business Training</h2>
+		<% @biz.each do |b| %>
+			<p><%= b.name %></p>
 		<% end %>
 	</div>
 <%= render 'form' %>

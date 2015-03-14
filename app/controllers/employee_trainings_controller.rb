@@ -5,9 +5,11 @@ class EmployeeTrainingsController < ApplicationController
   respond_to :html
 
   def index
+    @employee = Employee.all
+    @trainings = Training.all
     @employee_trainings = EmployeeTraining.all
+    @employee_training = EmployeeTraining.new
     respond_with(@employee_trainings)
-    
   end
 
   def show
@@ -25,7 +27,7 @@ class EmployeeTrainingsController < ApplicationController
   def create
     @employee_training = EmployeeTraining.new(employee_training_params)
     @employee_training.save
-    respond_with(@employee_training)
+    redirect_to employee_trainings_url
   end
 
   def update

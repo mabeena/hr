@@ -1,5 +1,5 @@
 <%= form_for(@skill) do |f| %>
-    <%= f.text_field :name, :placeholder => "skill" %>  
+    <%= f.text_field :name, :placeholder => "skill name" %>  
     <%= f.select :stype, Skill::SKILL_TYPES %>
-    <%= f.submit %>
+    <%= f.submit "Add Skill" %>
 <% end %>

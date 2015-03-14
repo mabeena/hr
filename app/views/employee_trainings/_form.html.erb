@@ -1,29 +1,6 @@
 <%= form_for(@employee_training) do |f| %>
-  <% if @employee_training.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@employee_training.errors.count, "error") %> prohibited this employee_training from being saved:</h2>
-
-      <ul>
-      <% @employee_training.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
-  </div>
-  <div class="field">
-    <%= f.label :training_id %><br>
-    <%= f.number_field :training_id %>
-  </div>
-  <div class="field">
-    <%= f.label :tdate %><br>
+    <%= f.collection_select :employee_id, Employee.all, :id, :employee_name %>
+    <%= f.collection_select :training_id, Training.all, :id, :name %>
     <%= f.date_select :tdate %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <%= f.submit "Submit" %>
 <% end %>
