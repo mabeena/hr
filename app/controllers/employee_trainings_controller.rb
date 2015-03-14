@@ -5,7 +5,7 @@ class EmployeeTrainingsController < ApplicationController
   respond_to :html
 
   def index
-    @employee = Employee.all
+    @employees = Employee.all
     @trainings = Training.all
     @employee_trainings = EmployeeTraining.all
     @employee_training = EmployeeTraining.new

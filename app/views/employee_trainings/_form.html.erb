@@ -1,6 +1,6 @@
 <%= form_for(@employee_training) do |f| %>
     <%= f.collection_select :employee_id, Employee.all, :id, :employee_name %>
     <%= f.collection_select :training_id, Training.all, :id, :name %>
-    <%= f.date_select :tdate %>
+    <%= f.date_select :tdate, :order => [:month, :year] %>
     <%= f.submit "Submit" %>
 <% end %>

@@ -1,7 +1,16 @@
-<%= render 'form' %>
-<% @employee_educations.each do |employee_education| %>
-	<p><%= employee_education.emp_name %><br />
-	<%= employee_education.ed_name %></p>
+<div id="emp_listing">
+<% @employees.each do |employee| %>
+	<% if employee.employee_educations.present? %>
+		<div id="indy_list">
+			<p class="emp_name"><%= employee.employee_name %></p>
+			<% @employee_educations.each do |employee_education| %>
+				<% if employee_education.employee_id == employee.id %>
+					<p class="detail_name"><%= employee_education.ed_name %>
+				<% end %>
+			<% end %>
+			<br /></p> 
+		</div>
+	<% end %>
 <% end %>
-
-
+</div>
+<%= render 'form'  %>
