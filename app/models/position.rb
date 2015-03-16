@@ -3,6 +3,6 @@ class Position < ActiveRecord::Base
 	has_many :evaluations
 	
 	def pos_name
-		name + 'in' + segment
+		name + ' in ' + segment
 	end
 end
