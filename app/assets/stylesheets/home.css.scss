@@ -1,35 +1,23 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.top-left, .top-right, .bottom-left, .bottom-right  {
-	width: 45%;
-	height: 50%;
+#main_content {
+	width: 100%;
+	height: 100%;
 	h1{
 		font-size: 25px;
 		text-align: center;
-		a{
-			text-decoration: underline;
-			color: black;
-		}
-		a:hover{
-			text-decoration: underline;
-			color: black;
-			background-color: inherit;
-			opacity: 0.8;
-		}
 	}
-}
-.top-left, .bottom-left{
-	float: left;
-}
-.top-right, .bottom-right{
-	float: right;
-}
-.bottom-left{
-	
-}
-.bottom-right{
-
+	.task{
+		font-size: 20px;
+		padding: 0 0 0 170px;
+		margin: 0;
+	}
+	.t_detail{
+		font-size: 16px;
+		padding: 0 0 12px 185px;
+		margin: 0;
+	}
 }
 #header {
 	background: url("hero.jpg");  
@@ -112,7 +100,7 @@ h2 {
 
 .register form p {
 	color: black;
-	padding: 10px 0 0 25px;
+	padding: 10px 0 0 20px;
 	margin: 0 auto;
 }
 .name{
@@ -139,7 +127,7 @@ h2 {
 	color: #fff;
 	display: block;
 	margin: 0 auto;
-	width: 328px;
+	width: 335px;
 	cursor: pointer;
 }
 .register select{

@@ -1,53 +1,14 @@
 <%= form_for(@evaluation) do |f| %>
-  <% if @evaluation.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@evaluation.errors.count, "error") %> prohibited this evaluation from being saved:</h2>
-
-      <ul>
-      <% @evaluation.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :sdate %><br>
-    <%= f.date_select :sdate %>
-  </div>
-  <div class="field">
-    <%= f.label :edate %><br>
-    <%= f.date_select :edate %>
-  </div>
-  <div class="field">
-    <%= f.label :commrunication %><br>
-    <%= f.number_field :commrunication %>
-  </div>
-  <div class="field">
-    <%= f.label :attitude %><br>
+    <%= f.collection_select :employee_id, @employees, :id, :employee_name, :prompt => 'Employee' %>
+    <%= f.collection_select :position_id, @positions, :id, :pos_name, :prompt => 'Position' %>
+	<%= f.date_select :sdate, start_year: 2015, end_year: 2020, :order => [:month, :year], prompt: { month: 'Month', year: 'Year' } %>
+	<%= f.label :enddate, "–" %>
+	<%= f.date_select :edate, start_year: 2015, end_year: 2020, :order => [:year], :prompt => 'Year' %><br />
+    <br /><%= f.number_field :communication %>
     <%= f.number_field :attitude %>
-  </div>
-  <div class="field">
-    <%= f.label :character %><br>
     <%= f.number_field :character %>
-  </div>
-  <div class="field">
-    <%= f.label :potential %><br>
     <%= f.number_field :potential %>
-  </div>
-  <div class="field">
-    <%= f.label :performance %><br>
-    <%= f.number_field :performance %>
-  </div>
-  <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
-  </div>
-  <div class="field">
-    <%= f.label :position_id %><br>
-    <%= f.number_field :position_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Submit" %>
-  </div>
+    <%= f.number_field :performance %><br />
+    <br /><%= f.submit "Submit" %>
 <% end %>
+

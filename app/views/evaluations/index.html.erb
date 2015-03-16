@@ -1,41 +1,19 @@
-<h1>Listing evaluations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Sdate</th>
-      <th>Edate</th>
-      <th>Commrunication</th>
-      <th>Attitude</th>
-      <th>Character</th>
-      <th>Potential</th>
-      <th>Performance</th>
-      <th>Employee</th>
-      <th>Position</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @evaluations.each do |evaluation| %>
-      <tr>
-        <td><%= evaluation.sdate %></td>
-        <td><%= evaluation.edate %></td>
-        <td><%= evaluation.commrunication %></td>
-        <td><%= evaluation.attitude %></td>
-        <td><%= evaluation.character %></td>
-        <td><%= evaluation.potential %></td>
-        <td><%= evaluation.performance %></td>
-        <td><%= evaluation.employee_id %></td>
-        <td><%= evaluation.position_id %></td>
-        <td><%= link_to 'Show', evaluation %></td>
-        <td><%= link_to 'Edit', edit_evaluation_path(evaluation) %></td>
-        <td><%= link_to 'Destroy', evaluation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Evaluation', new_evaluation_path %>
+<div id="eval_listing">
+<% @employees.each do |employee| %>
+	<% if employee.evaluations.present? %>
+		<div id="eval_list">
+			<p class="eval_name"><%= employee.employee_name %></p>
+			<% @evaluations.each do |e| %>
+				<% if e.employee_id == employee.id %>
+					<p class="eval_detail">
+						<%= e.pos_name %>, 
+						<%= e.sdate.strftime("(%b %Y - ") %>
+						<%= e.edate.strftime("%y)") %>
+				<% end %>
+			<% end %>
+			<br /><br /></p> 
+		</div>
+	<% end %>
+<% end %>
+</div>
+<%= render 'form'  %>

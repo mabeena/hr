@@ -6,7 +6,9 @@ class EvaluationsController < ApplicationController
 
   def index
     @evaluations = Evaluation.all
-    respond_with(@evaluations)
+    @positions = Position.all
+    @employees = Employee.order(fname: :asc)
+    @evaluation = Evaluation.new
   end
 
   def show
@@ -24,7 +26,7 @@ class EvaluationsController < ApplicationController
   def create
     @evaluation = Evaluation.new(evaluation_params)
     @evaluation.save
-    respond_with(@evaluation)
+    redirect_to evaluations_url
   end
 
   def update

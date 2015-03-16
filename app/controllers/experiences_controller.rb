@@ -5,9 +5,9 @@ class ExperiencesController < ApplicationController
   respond_to :html
 
   def index
-    @experiences = Experience.all
+    @experiences = Experience.order(startdate: :desc)
+    @employees = Employee.order(fname: :asc)
     @experience = Experience.new
-    respond_with(@experiences)
   end
 
   def show
@@ -25,7 +25,7 @@ class ExperiencesController < ApplicationController
   def create
     @experience = Experience.new(experience_params)
     @experience.save
-    respond_with(@experience)
+    redirect_to experiences_url
   end
 
   def update

@@ -5,7 +5,7 @@ class EmployeeSkillsController < ApplicationController
   respond_to :html
 
   def index
-  	@employees = Employee.all
+  	@employees = Employee.order(fname: :asc)
   	@skills = Skill.all
     @employee_skills = EmployeeSkill.all
     @employee_skill = EmployeeSkill.new

@@ -7,18 +7,51 @@
 		<li><%= link_to 'Add Positions', positions_path %></li>
 	</ul>
 </div>
-<section class= "top-left">
-	<h1></h1>
-</section>
-<section class= "top-right">
-	<h1></h1>
-</section>
-<section class= "bottom-left">
-	<h1></h1>
-</section>
-<section class= "bottom-right">
-	<h1></h1>
-</section>
+<div id="main_content">
+	<h1>Reminder List For Mabeena & Anees</h1>
+	<p class="task">Finish Evaluation Page</p>
+	<p class="t_detail">
+		-only show eval employee name, position, dates, and evaluator; if they have access, they can 
+		click to view specific eval scores done on that employee.
+	</p>
+	<p class="task">Search by Employees</p>
+	<p class="t_detail">
+		-using solr or another gem to add text searching to highlight employees when 
+		adding information on the cross over tables.
+	</p>
+	<p class="task">Promotable canidate wizard</p>
+	<p class="t_detail">
+		-using wicked wizard gem to allow HR to input different paramaters in a 
+		easy to use step form. The result is the rollup page of canidates with their
+		scores in relation to matching percentage and evaluation score.
+	</p>
+	<p class="task">Seed the database</p>
+	<p class="t_detail">
+		-figure out a way to seed the db without a ton of manual work. We need about 20,000 records 
+		total.
+	</p>
+	<p class="task">Create Dashboard</p>
+	<p class="t_detail">
+		-simple graphsand charts using chartkick gem
+	</p>
+	<p class="task">Restricting Permissions</p>
+	<p class="t_detail">
+		-start restricting access to certain functions such as who can evaluate, what pages can
+		people see, what can they do on the pages they see, etc.
+	</p>
+	<p class="task">Reminder X</p>
+	<p class="t_detail">
+		-details here; find me in views > home > index.html.erb under paragraph task and detail.
+	</p>
+	<p class="task">Reminder Y</p>
+	<p class="t_detail">
+		-details here; find me in views > home > index.html.erb under paragraph task and detail.
+	</p>
+	<p class="task">Reminder Z</p>
+	<p class="t_detail">
+		-details here; find me in views > home > index.html.erb under paragraph task and detail.
+	</p>
+</div>
 <% else %>
 <div id="header">
 	<h1><span>HR Promotion</span> DSS</h1>

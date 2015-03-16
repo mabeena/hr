@@ -12,7 +12,7 @@ class Employee < ActiveRecord::Base
     has_many :employee_trainings
     has_many :employee_skills
     has_many :employee_educations
-
+	
 	def employee_name
 		fname + ' ' + lname + ' ' + level
 	end

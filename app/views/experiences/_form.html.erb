@@ -1,41 +1,10 @@
 <%= form_for(@experience) do |f| %>
-  <% if @experience.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@experience.errors.count, "error") %> prohibited this experience from being saved:</h2>
-
-      <ul>
-      <% @experience.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :comany %><br>
-    <%= f.text_field :comany %>
-  </div>
-  <div class="field">
-    <%= f.label :startdate %><br>
-    <%= f.date_select :startdate %>
-  </div>
-  <div class="field">
-    <%= f.label :enddate %><br>
-    <%= f.date_select :enddate %>
-  </div>
-  <div class="field">
-    <%= f.label :field %><br>
-    <%= f.text_field :field %>
-  </div>
-  <div class="field">
-    <%= f.label :employee_id %><br>
-    <%= f.number_field :employee_id %>
-  </div>
-  <div class="actions">
+	<%= f.collection_select :employee_id, @employees, :id, :employee_name, :prompt => 'Employee' %>
+	<%= f.text_field :company, :placeholder => "Company"%>
+	<%= f.text_field :title, :placeholder => "Title" %>
+	<%= f.select :field, Experience::IND_TYPES, :prompt => 'Industry' %>
+	<%= f.date_select :startdate, start_year: 2015, end_year: 1990, :order => [:month, :year], prompt: { month: 'Month', year: 'Year' } %>
+	<%= f.label :enddate, "–" %>
+	<%= f.date_select :enddate, start_year: 2015, end_year: 1990, :order => [:year], :prompt => 'Year' %>
     <%= f.submit "Submit" %>
-  </div>
 <% end %>

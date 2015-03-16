@@ -5,11 +5,10 @@ class EmployeeEducationsController < ApplicationController
   respond_to :html
 
   def index
-  	@employees = Employee.all
   	@educations = Education.all
+  	@employees = Employee.order(fname: :asc)
   	@employee_educations = EmployeeEducation.all
     @employee_education = EmployeeEducation.new
-    respond_with(@employee_education)
   end
 
   def show

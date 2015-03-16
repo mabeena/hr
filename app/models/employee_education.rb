@@ -1,7 +1,7 @@
 class EmployeeEducation < ActiveRecord::Base
 	belongs_to :employee
 	belongs_to :education
-
+	
 	def ed_name
 		education.education_name
 	end

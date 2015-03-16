@@ -5,7 +5,7 @@ class EmployeeTrainingsController < ApplicationController
   respond_to :html
 
   def index
-    @employees = Employee.all
+    @employees = Employee.order(fname: :asc)
     @trainings = Training.all
     @employee_trainings = EmployeeTraining.all
     @employee_training = EmployeeTraining.new

@@ -1,3 +1,89 @@
 // Place all the styles related to the evaluations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#new_evaluation {
+	text-align: center;
+	padding: 9px 0 9px 0;
+	background-color: #656464;
+	height: 39%;
+	input[type="number"] {
+		border: 1px solid #fff;
+		width: 175px;
+		height: 50px;
+		font-size: 25px;
+		padding-left: 5px;
+		margin-top: 5px;
+	}
+	input[type="submit"]  {
+		background-color: #33cc77;
+		color: #fff;
+		width: 150px;
+		height: 55px;
+		cursor: pointer;
+		font-size: 24px;
+	}
+	#evaluation_employee_id{
+		width: 200px;
+		height: 54px;
+		font-size: 25px;
+		padding-left: 5px;
+		border: 1px solid #fff;
+	}
+	#evaluation_position_id{
+		width: 220px;
+		height: 54px;
+		font-size: 25px;
+		padding-left: 5px;
+		border: 1px solid #fff;
+	}
+	#evaluation_field {
+		width: 175px;
+		height: 54px;
+		font-size: 25px;
+		padding-left: 5px;
+		border: 1px solid #fff;
+	}
+	#evaluation_sdate_2i {
+		width: 145px;
+		height: 54px;
+		font-size: 25px;
+		padding-left: 5px;
+		border: 1px solid #fff;
+	}
+	#evaluation_sdate_1i, #evaluation_edate_1i {
+		width: 100px;
+		height: 54px;
+		font-size: 25px;
+		padding-left: 5px;
+		border: 1px solid #fff;
+	}
+	label {
+		font-size: 40px;
+		color: white;
+		padding: 0;
+		margin: 0;
+	}
+}
+#eval_listing{
+	width: 100%;
+	height: 61%;
+	overflow-y: scroll;
+	#eval_list{
+		width: 20%;
+		float:left;
+		.eval_name, .eval_detail{
+			margin: 0;
+			padding: 5px 5px 0 5px;
+		}
+		.eval_name{
+			font-size: 22px
+		}
+		.eval_detail{
+			font-size: 16px;
+			border-bottom: 1px solid black;
+		}
+	}
+}
+#eval_list:nth-child(odd){
+	background-color: #fff;
+}
