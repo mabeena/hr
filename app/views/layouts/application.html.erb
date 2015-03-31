@@ -4,6 +4,7 @@
   <title>HR Promotion DSS</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
@@ -12,12 +13,10 @@
 		<div class= "navi">
 			<div class= "weak">
 				<ul>
-					<li><%= link_to 'home', root_path %></li>
-					<li><%= link_to 'evaluations', evaluations_path %></li>
-					<li><%= link_to 'experience', experiences_path %></li>
-					<li><%= link_to 'skill', employee_skills_path %></li>
-					<li><%= link_to 'training', employee_trainings_path %></li>
-					<li><%= link_to 'education', employee_educations_path %></li>
+					<li><%= link_to 'PROMOTION DSS', home_show_path %></li>
+					<li><%= link_to 'EVALUATIONS', evaluations_path %></li>
+					<li><%= link_to 'SKILLS', employee_skills_path %></li>
+					<li><%= link_to 'EDUCATIONS', employee_educations_path %></li>
 				</ul>
 			</div>
 			<div class= "strong">

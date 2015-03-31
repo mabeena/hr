@@ -1,0 +1,43 @@
+<div id="supportnavi">
+	<ul>
+		<li><%= link_to 'my dashboard', root_path %></li>
+		<li><%= link_to 'add educations', educations_path %></li>
+		<li><%= link_to 'add skill-sets', skills_path %></li>
+		<li><%= link_to 'add positions', positions_path %></li>
+	</ul>
+</div>
+<div id="main_content">
+	<h1>Reminder List For Mabeena & Anees</h1>
+	<p class="task">Finish Evaluation Page</p>
+	<p class="t_detail">
+		-only show eval employee name, position, dates, and evaluator; if they have access, they can 
+		click to view specific eval scores done on that employee.
+	</p>
+	<p class="task">Promotable canidate wizard</p>
+	<p class="t_detail">
+		-using wicked wizard gem to allow HR to input different paramaters in a 
+		easy to use step form. The result is the rollup page of canidates with their
+		scores in relation to matching percentage and evaluation score. 
+		Select by Education, Skills, Positions, Levels; Show viable candidates with their 
+		Evaluations scores averaged;
+		Example: hs/ged + excel, powerpoint, word, etc. + sales leadership + 5 years + sales rep + A3
+	</p>
+	<p class="task">Seed the database</p>
+	<p class="t_detail">
+		-finish evaluation seed data (more for lower | less for higher); assign skills to employees
+	</p>
+	<p class="task">Create Dashboard</p>
+	<p class="t_detail">
+		-simple graphs and charts for employee data (skills, education, etc)
+	</p>
+	<p class="task">Restricting Permissions</p>
+	<p class="t_detail">
+		-start restricting access to certain functions based on role; main admin user has role of 
+		human resources; evals can only be see by the ones that created them or if it was done on them;
+		exception is a role of manager
+	</p>
+	<p class="task">Reminder X</p>
+	<p class="t_detail">
+		-details here; find me in views > home > index.html.erb under paragraph task and detail.
+	</p>
+</div>

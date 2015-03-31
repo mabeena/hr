@@ -1,8 +1,9 @@
 class Position < ActiveRecord::Base
-	SEGMENT_TYPE = ["sales", "marketing", "research & development", "procurement", "human resources", "finance"]
-	has_many :evaluations
+	ROLE_TYPES = ["Team Leader", "Supervisor", "Manager", "Human Resources"]
+	LEVEL_TYPES = ["A3", "B1", "B2", "B3", "C1", "C2", "C3", "D", "E"]
+	has_many :employees
 	
 	def pos_name
-		name + ' in ' + segment
+		name + ' ' + level
 	end
 end

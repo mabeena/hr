@@ -1,5 +1,4 @@
 class EmployeeSkill < ActiveRecord::Base
-	LEVEL_TYPES = ["novice","intermediate", "advanced"]
 	belongs_to :employee
 	belongs_to :skill
 

@@ -6,13 +6,13 @@ class SkillsController < ApplicationController
 
   def index
     @tech = Skill.where(stype: "technical").order(name: :asc)
-    @nontech = Skill.where(stype: "non-technical").order(name: :asc)
+    @bizness = Skill.where(stype: "business").order(name: :asc)
     @skill = Skill.new
     respond_with(@skills)
   end
 
   def show
-    respond_with(@skill)
+    rsespond_with(@skill)
   end
 
   def new

@@ -1,46 +1,52 @@
 <div id="supportnavi">
 	<ul>
-		<li><%= link_to 'Add Educations', educations_path %></li>
-		<li><%= link_to 'Add Skill-Sets', skills_path %></li>
-		<li><%= link_to 'Add Trainings', trainings_path %></li>
-		<li class="current"><%= link_to 'Add Positions', positions_path %></li>
+		<li><%= link_to 'my dashboard', root_path %></li>
+		<li><%= link_to 'add educations', educations_path %></li>
+		<li><%= link_to 'add skill-sets', skills_path %></li>
+		<li class="current"><%= link_to 'add positions', positions_path %></li>
 	</ul>
 </div>
 <div id="positions">
 	<div class="topleft">
-	<h2>Sales</h2>
-		<% @sales.each do |sale| %>
-			<p><%= sale.name %></p>
+	<h2>Executives</h2>
+		<% @ex.each do |e| %>
+			<p><%= e.name.upcase %></p>
 		<% end %>
   	</div>  
 	<div class="topmid">
-	<h2>Marketing</h2>
-		<% @marketing.each do |mark| %>
-			<p><%= mark.name %></p>
+	<h2>Directors</h2>
+		<% @dir.each do |d| %>
+			<p><%= d.name.upcase %></p>
 		<% end %>
-  	</div>
+  	</div>  
 	<div class="topright">
-	<h2>Research & Development</h2>
-		<% @rnd.each do |rnd| %>
-			<p><%= rnd.name %></p>
+	<h2>Managers</h2>
+		<% @c3.each do |c3| %>
+			<p><%= c3.name.upcase %></p>
+		<% end %>
+		<% @b3.each do |b3| %>
+			<p><%= b3.name.upcase %></p>
 		<% end %>
   	</div>  
 	<div class="botleft">
-	<h2>Procurement</h2>
-		<% @procurement.each do |pro| %>
-			<p><%= pro.name %></p>
+	<h2>Supervisors</h2>
+		<% @c2.each do |c2| %>
+			<p><%= c2.name.upcase %></p>
 		<% end %>
-  	</div> 
-	<div class="botmid">
-	<h2>Human Resources</h2>
-		<% @hr.each do |hr| %>
-			<p><%= hr.name %></p>
+		<% @b2.each do |b2| %>
+			<p><%= b2.name.upcase %></p>
+		<% end %>
+		<% @c1.each do |c2| %>
+			<p><%= c2.name.upcase %></p>
+		<% end %>
+		<% @b1.each do |b2| %>
+			<p><%= b2.name.upcase %></p>
 		<% end %>
   	</div>  
 	<div class="botright">
-	<h2>Finance</h2>
-		<% @finance.each do |fin| %>
-			<p><%= fin.name %></p>
+	<h2>Team Leaders</h2>
+		<% @tl.each do |t| %>
+			<p><%= t.name.upcase %></p>
 		<% end %>
   	</div> 
 <%= render 'form' %>

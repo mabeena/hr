@@ -1,19 +1,30 @@
-<div id="eval_listing">
-<% @employees.each do |employee| %>
-	<% if employee.evaluations.present? %>
-		<div id="eval_list">
-			<p class="eval_name"><%= employee.employee_name %></p>
-			<% @evaluations.each do |e| %>
-				<% if e.employee_id == employee.id %>
-					<p class="eval_detail">
-						<%= e.pos_name %>, 
-						<%= e.sdate.strftime("(%b %Y - ") %>
-						<%= e.edate.strftime("%y)") %>
-				<% end %>
+<div id="rating_listing">
+	<div id="rated">
+		<h1>Ratings You Filed</h1>
+		<% @evaluations.each do |e| %>
+			<% if current_employee.id == e.rater_id %>
+				<p>
+					<%= e.emp_name %>
+					<%= e.evalScore %>
+				</p>
+			<% else %>
+				You have not rated anyone yet
 			<% end %>
-			<br /><br /></p> 
-		</div>
-	<% end %>
-<% end %>
+		<% end %>
+	</div>
+	<div id="received">
+		<h1>Your Ratings</h1>
+		<% @evaluations.each do |e| %>
+			<% if current_employee.id == e.employee_id %>
+				<p>
+					<%= e.rater_id %>
+					<%= e.evalScore %>
+				</p>
+			<% else %>
+				You have not been evaluated yet
+			<% end %>
+		<% end %>
+	</div>
+	<%= link_to 'New Rating', new_evaluation_path %>
 </div>
-<%= render 'form'  %>
+

@@ -1,5 +1,0 @@
-<%= form_for(@training) do |f| %>
-	<%= f.text_field :name, :placeholder => "training name" %>
-	<%= f.select :ttype, Training::TRAINING_TYPES %>
-    <%= f.submit "Add Training" %>
-<% end %>

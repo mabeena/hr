@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
-  resources :employee_trainings
   resources :employee_educations
   resources :employee_skills
   resources :skills
   resources :educations
-  resources :trainings
   resources :evaluations
   resources :positions
-  resources :experiences
   devise_for :employees
+  get "home/show"
+  resources :promotions
   
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,9 +1,9 @@
 <div id="supportnavi">
 	<ul>
-		<li><%= link_to 'Add Educations', educations_path %></li>
-		<li class="current"><%= link_to 'Add Skill-Sets', skills_path %></li>
-		<li><%= link_to 'Add Trainings', trainings_path %></li>
-		<li><%= link_to 'Add Positions', positions_path %></li>
+		<li><%= link_to 'my dashboard', root_path %></li>
+		<li><%= link_to 'add educations', educations_path %></li>
+		<li class="current"><%= link_to 'add skill-sets', skills_path %></li>
+		<li><%= link_to 'add positions', positions_path %></li>
 	</ul>
 </div>
 <div id="skills">
@@ -14,9 +14,9 @@
 		<% end %>
 	</div>
 	<div class="rightside">
-	<h2>Non-Technical</h2>
-		<% @nontech.each do |nontech| %>
-			<p><%= nontech.skillName %></p>
+	<h2>Business</h2>
+		<% @bizness.each do |biz| %>
+			<p><%= biz.skillName %></p>
 		<% end %>
 	</div>
 

@@ -4,11 +4,8 @@
 #positions{
 	height: 100%;
 	width: 100%;
-	.topleft, .topmid, .topright, .botleft, .botmid, .botright {
-		width: 30%;
+	.topleft, .topmid, .topright, .botleft, .botright {
 		float: left;
-		text-align: center;
-		height: 42.5%;
 		border-bottom: 1px solid #fff;
 		overflow-y: scroll;
 		h2{
@@ -21,17 +18,37 @@
 		}
 		p {
 			margin: 0;
-			padding-top: 5px;
-			width: 33%;
+			padding: 5px 0 0 20px;
 			float: left;
-			font-size: 12px;
+			font-size: 14px;
 		}
 	}
 }
-.topleft, .topright, .botmid {
+.topleft {
+	width: 20%;
+	height: 25%;
+	p {
+		width: 42%;
+	}
+}
+.topmid, .topright {
+	width: 35%;
+	height: 25%;
+	p {
+		width: 45%;
+	}
+}
+.botleft, .botright  {
+	width: 45%;
+	height: 60%;
+	p {
+		width: 46%;
+	}
+}
+.topleft, .topright, .botright {
 	background-color: #fff;
 }
-.botleft, .topmid, .botright {
+.botleft, .topmid {
 	background-color: #F3F9FB;
 }
 #new_position {

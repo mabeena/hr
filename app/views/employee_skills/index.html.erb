@@ -1,3 +1,10 @@
+<div id="search">
+	<%= form_tag(employee_skills_path, :method => "get") do %>
+	  <%= text_field_tag :search, params[:search], placeholder: "Search Employees" %>
+	  <%= submit_tag "Search", :name => nil %>
+	  <%= link_to "Reset Search", employee_skills_path %>
+	<% end %>
+</div>
 <div id="emp_listing">
 <% @employees.each do |employee| %>
 	<% if employee.employee_skills.present? %>

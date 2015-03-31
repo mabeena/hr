@@ -6,17 +6,16 @@ class EvaluationsController < ApplicationController
 
   def index
     @evaluations = Evaluation.all
-    @positions = Position.all
     @employees = Employee.order(fname: :asc)
-    @evaluation = Evaluation.new
   end
 
   def show
-    respond_with(@evaluation)
+    @employee_skill = EmployeeSkill.new
   end
 
   def new
     @evaluation = Evaluation.new
+    @employees = Employee.order(lname: :asc)
     respond_with(@evaluation)
   end
 
@@ -26,7 +25,7 @@ class EvaluationsController < ApplicationController
   def create
     @evaluation = Evaluation.new(evaluation_params)
     @evaluation.save
-    redirect_to evaluations_url
+    redirect_to @evaluation
   end
 
   def update
@@ -45,6 +44,6 @@ class EvaluationsController < ApplicationController
     end
 
     def evaluation_params
-      params.require(:evaluation).permit(:sdate, :edate, :communication, :attitude, :character, :potential, :performance, :employee_id, :position_id)
+      params.require(:evaluation).permit(:employee_id, :rater_id, :gScore, :qScore, :iScore, :rScore, :aScore, :mScore, :isScore, :owScore, :dScore, :oScore, :kScore, :pScore, :lScore, :evalScore)
     end
 end

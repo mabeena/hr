@@ -5,12 +5,18 @@ class PositionsController < ApplicationController
   respond_to :html
 
   def index
-    @sales = Position.where(segment: "sales").order(name: :asc)
-    @marketing = Position.where(segment: "marketing").order(name: :asc)
-    @rnd = Position.where(segment: "research & development").order(name: :asc)
-    @procurement = Position.where(segment: "procurement").order(name: :asc)
-    @hr = Position.where(segment: "human resources").order(name: :asc)
-    @finance = Position.where(segment: "finance").order(name: :asc)
+    @ex = Position.where(level: "E").order(name: :asc)
+    @dir = Position.where(level: "D").order(name: :asc)
+	#mgr
+    @c3 = Position.where(level: "C3").order(name: :asc)
+    @b3 = Position.where(level: "B3").order(name: :asc)
+	#sup
+    @c2 = Position.where(level: "C2").order(name: :asc)
+    @b2 = Position.where(level: "B2").order(name: :asc)
+    @c1 = Position.where(level: "C1").order(name: :asc)
+    @b1 = Position.where(level: "C1").order(name: :asc)
+	#tl
+    @tl = Position.where(level: "A3").order(name: :asc)
     @position = Position.new
     respond_with(@position)
   end
@@ -49,6 +55,6 @@ class PositionsController < ApplicationController
     end
 
     def position_params
-      params.require(:position).permit(:name, :segment)
+      params.require(:position).permit(:name, :level, :role)
     end
 end

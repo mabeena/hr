@@ -32,10 +32,7 @@ class DeviseCreateEmployees < ActiveRecord::Migration
       # t.datetime :locked_at
       t.string :fname
       t.string :lname
-      t.string :level
-      t.string :role
-
-
+      t.integer :position_id
       t.timestamps
     end
 

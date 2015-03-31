@@ -1,14 +1,218 @@
 <%= form_for(@evaluation) do |f| %>
-    <%= f.collection_select :employee_id, @employees, :id, :employee_name, :prompt => 'Employee' %>
-    <%= f.collection_select :position_id, @positions, :id, :pos_name, :prompt => 'Position' %>
-	<%= f.date_select :sdate, start_year: 2015, end_year: 2020, :order => [:month, :year], prompt: { month: 'Month', year: 'Year' } %>
-	<%= f.label :enddate, "–" %>
-	<%= f.date_select :edate, start_year: 2015, end_year: 2020, :order => [:year], :prompt => 'Year' %><br />
-    <br /><%= f.number_field :communication %>
-    <%= f.number_field :attitude %>
-    <%= f.number_field :character %>
-    <%= f.number_field :potential %>
-    <%= f.number_field :performance %><br />
-    <br /><%= f.submit "Submit" %>
+    <div id="empSelect">
+    	<%= f.collection_select :employee_id, @employees, :id, :employee_name, :prompt => 'Rated Employee' %>
+		<%= f.hidden_field :rater_id, :value => current_employee.id %> 
+	</div>
+	<section class ="left">
+		<h1>Performance</h1>
+		<div id="question">
+			<h3>Meets goals and timelines?</h3>
+			<p class="lOne">
+				<%= f.radio_button :gScore, '0' %><br />
+				<%= f.label :gScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :gScore, '3' %><br />
+				<%= f.label :gScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :gScore, '5' %><br />
+				<%= f.label :gScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="question">
+			<h3>Quality of work:</h3>
+			<p class="lOne">
+				<%= f.radio_button :qScore, '0' %><br />
+				<%= f.label :qScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :qScore, '3' %><br />
+				<%= f.label :qScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :qScore, '5' %><br />
+				<%= f.label :qScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="question">
+			<h3>Initiative level:</h3>
+			<p class="lOne">
+				<%= f.radio_button :iScore, '0' %><br />
+				<%= f.label :iScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :iScore, '3' %><br />
+				<%= f.label :iScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :iScore, '5' %><br />
+				<%= f.label :iScore, 'exceeds' %>
+			</p>
+		</div>
+	</section>
+	<section class ="middle">
+		<h1>Competence</h1>
+		<div id="question">
+			<h3>Knowledgeable:</h3>
+			<p class="lOne">
+				<%= f.radio_button :kScore, '0' %><br />
+				<%= f.label :kScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :kScore, '3' %><br />
+				<%= f.label :kScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :kScore, '5' %><br />
+				<%= f.label :kScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="question">
+			<h3>Ability to fix problems:</h3>
+			<p class="lOne">
+				<%= f.radio_button :pScore, '0' %><br />
+				<%= f.label :pScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :pScore, '3' %><br />
+				<%= f.label :pScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :pScore, '5' %><br />
+				<%= f.label :pScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="question">
+			<h3>Professional growth:</h3>
+			<p class="lOne">
+				<%= f.radio_button :lScore, '0' %><br />
+				<%= f.label :lScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :lScore, '3' %><br />
+				<%= f.label :lScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :lScore, '5' %><br />
+				<%= f.label :lScore, 'exceeds' %>
+			</p>
+		</div>
+	</section>
+	<section class="right">
+		<h1>Management</h1>
+		<div id="question">
+			<h3>Ability to communicate with others:</h3>
+			<p class="lOne">
+				<%= f.radio_button :owScore, '0' %><br />
+				<%= f.label :owScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :owScore, '3' %><br />
+				<%= f.label :owScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :owScore, '5' %><br />
+				<%= f.label :owScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="question">
+			<h3>Ability to delegate:</h3>
+			<p class="lOne">
+				<%= f.radio_button :dScore, '0' %><br />
+				<%= f.label :dScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :dScore, '3' %><br />
+				<%= f.label :dScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :dScore, '5' %><br />
+				<%= f.label :dScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="question">
+			<h3>Organized individual:</h3>
+			<p class="lOne">
+				<%= f.radio_button :oScore, '0' %><br />
+				<%= f.label :oScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :oScore, '3' %><br />
+				<%= f.label :oScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :oScore, '5' %><br />
+				<%= f.label :oScore, 'exceeds' %>
+			</p>
+		</div>
+	</section>
+	<section class ="bottom">
+		<h1>Leadership</h1>
+		<div id="sp_question">
+			<h3>Accountable for their actions?</h3>
+			<p class="lOne">
+				<%= f.radio_button :aScore, '0' %><br />
+				<%= f.label :aScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :aScore, '3' %><br />
+				<%= f.label :aScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :aScore, '5' %><br />
+				<%= f.label :aScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="sp_question">
+			<h3>How responsible is this employee?</h3>
+			<p class="lOne">
+				<%= f.radio_button :rScore, '0' %><br />
+				<%= f.label :rScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :rScore, '3' %><br />
+				<%= f.label :rScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :rScore, '5' %><br />
+				<%= f.label :rScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="sp_question">
+			<h3>Ability to motivate others:</h3>
+			<p class="lOne">
+				<%= f.radio_button :mScore, '0' %><br />
+				<%= f.label :mScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :mScore, '3' %><br />
+				<%= f.label :mScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :mScore, '5' %><br />
+				<%= f.label :mScore, 'exceeds' %>
+			</p>
+		</div>	
+		<div id="sp_question"></div>
+		<div id="sp_question">
+			<h3>Ability to identify and build rapport:</h3>
+			<p class="lOne">
+				<%= f.radio_button :isScore, '0' %><br />
+				<%= f.label :isScore, 'needs improvement' %>
+			</p>
+			<p class="lTwo">
+				<%= f.radio_button :isScore, '3' %><br />
+				<%= f.label :isScore, 'attains' %>
+			</p>
+			<p class="lThree">
+				<%= f.radio_button :isScore, '5' %><br />
+				<%= f.label :isScore, 'exceeds' %>
+			</p>
+		</div>
+		<div id="sp_question"></div>
+		<div id="submit"><%= f.submit "Submit" %></div>
+	</section>
 <% end %>
+
 

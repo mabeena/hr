@@ -5,9 +5,13 @@ class EmployeeEducationsController < ApplicationController
   respond_to :html
 
   def index
+    if params[:search]
+      @employees = Employee.search(params[:search])
+    else
+      @employees = Employee.all
+    end
   	@educations = Education.all
-  	@employees = Employee.order(fname: :asc)
-  	@employee_educations = EmployeeEducation.all
+  	@employee_educations = EmployeeEducation.order(education_id: :asc)
     @employee_education = EmployeeEducation.new
   end
 
