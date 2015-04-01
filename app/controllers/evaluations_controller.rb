@@ -7,10 +7,12 @@ class EvaluationsController < ApplicationController
   def index
     @evaluations = Evaluation.all
     @employees = Employee.order(fname: :asc)
+    @rated = Evaluation.limit(1)
   end
 
   def show
-    @employee_skill = EmployeeSkill.new
+    #redirect_to evaluations_url
+    respond_with(@evaluation)
   end
 
   def new

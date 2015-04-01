@@ -29,6 +29,18 @@ before_save :insertScore
 		competence = ((self.kScore/5) * 0.25) + ((self.pScore/5 ) * 0.65) + ((self.lScore/5) * 0.1)
 		c = competence * 0.15
 	end
+	def per
+		per = p * 100
+	end
+	def lea
+		lea = l * 100
+	end
+	def mgm
+		mgm = m * 100
+	end
+	def com
+		com = c * 100
+	end
 	def evalScore
 		evalScore = (p + l + m + c)*100
 	end

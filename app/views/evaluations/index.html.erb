@@ -14,7 +14,7 @@
 	</div>
 	<div id="received">
 		<h1>Your Ratings</h1>
-		<% @evaluations.each do |e| %>
+		<% @rated.each do |e| %>
 			<% if current_employee.id == e.employee_id %>
 				<p>
 					<%= e.rater_id %>

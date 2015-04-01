@@ -16,6 +16,7 @@ class Employee < ActiveRecord::Base
 		a = fname + ' ' + lname
 		a.titleize
 	end
+	
 	def self.search(query)
     	where("fname like ? OR lname like ?", "%#{query}%", "%#{query}%") 
     end	

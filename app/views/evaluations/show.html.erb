@@ -1,3 +1,12 @@
-<p id="notice">Evaluation Created Successfully</p>
-<%= render :partial => 'employee_skills/form'  %> 
-
+<div id="eval_skills">
+	<div class="eval_rollup">
+		<h1>You Created an Evaluation on <%= @evaluation.emp_name %></h1> 
+			<p>Performance Score <%= @evaluation.per.to_i %></p>
+			<p>Leadership Score <%= @evaluation.lea.to_i %></p>
+			<p>Management Score <%= @evaluation.mgm.to_i %></p>
+			<p>Competence Score <%= @evaluation.com.to_i %></p>
+			<p>Overal Score Rating: <%= @evaluation.evalScore %>%</p>
+	</div>
+		
+	<%= link_to 'Add Skills', employee_skills_path %> or <%= link_to 'Finish', evaluations_path %>
+</div>

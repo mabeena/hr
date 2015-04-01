@@ -31,8 +31,7 @@ class EmployeeSkillsController < ApplicationController
   def create
     @employee_skill = EmployeeSkill.new(employee_skill_params)
     @employee_skill.save
-    redirect_to evaluations_url
-    #redirect_to employee_skills_url
+    redirect_to employee_skills_url
   end
 
   def update
