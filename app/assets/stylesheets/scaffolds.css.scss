@@ -3,7 +3,6 @@ body {
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
-  line-height: 18px;
 }
 
 p, ol, ul, td {
@@ -133,6 +132,7 @@ div {
 	#indy_list{
 		width: 20%;
 		float:left;
+		border-bottom: 1px solid black;
 		.emp_name, .detail_name {
 			margin: 0;
 			padding: 5px 5px 0 5px;
@@ -142,7 +142,7 @@ div {
 		}
 		.detail_name {
 			font-size: 16px;
-			border-bottom: 1px solid black;
+			
 		}
 	}
 }

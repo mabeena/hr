@@ -1,16 +1,19 @@
 <div id="rating_listing">
 	<div id="rated">
 		<h1>Ratings You Filed</h1>
+		<p class="title">Employee</p>
+		<p class="title">Rating</p>
 		<% @evaluations.each do |e| %>
 			<% if current_employee.id == e.rater_id %>
-				<p>
-					<%= e.emp_name %>
-					<%= e.evalScore %>
-				</p>
+				<p><%= e.emp_name %></p>
+				<p><%= e.friendlyScale %></p>
 			<% else %>
 				You have not rated anyone yet
 			<% end %>
 		<% end %>
+		<div id="ratingLink">
+			<%= link_to 'Create New Evaluation', new_evaluation_path %>
+		</div>
 	</div>
 	<div id="received">
 		<h1>Your Ratings</h1>
@@ -25,6 +28,6 @@
 			<% end %>
 		<% end %>
 	</div>
-	<%= link_to 'New Rating', new_evaluation_path %>
 </div>
+
 

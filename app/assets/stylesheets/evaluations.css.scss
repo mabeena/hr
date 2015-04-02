@@ -8,17 +8,52 @@
 	height: 100%;
 	width: 100%;
 	#rated, #received {
-		width: 49%;
+		width: 50%;
+		height: 100%;
 		float: left;
+		border-top: 1px solid #fff;
+		h1 {
+			text-align: center;
+			font-size: 26px;
+			margin: 0;
+			padding: 10px 0 10px 0;
+			background-color: #f95252;
+			width: 100%;		
+		}
+		p {
+			font-size: 20px;
+			float: left;
+			width: 40%;
+			margin: 10px 0 2px 60px;
+		}
+		.title {
+			font-weight: bold;
+			text-decoration: underline;
+			font-size: 24px;
+		}
 	}
-	#received {
-	
+	#rated {
+		background-color: #fff;
+		#ratingLink {
+			background-color: #33cc77;
+			position:absolute; 
+			bottom:10px;
+			left: 125px;
+			text-align: center;
+			padding: 25px 50px 25px 50px;
+			a {
+				font-size: 22px;
+				text-decoration: none;
+				color: white;
+			}
+		}
 	}
 }
+
 #evaluation {
 	margin: 0;
 	padding: 0;
-	height: 1000px;
+	height: 950px;
 	width: 100%;
 	overflow: scroll;
 	#empSelect{
@@ -34,7 +69,7 @@
 	}
 	.left, .middle, .right {
 		width: 33.2%;
-		height: 350px;
+		height: 435px;
 		float: left;
 		border-bottom: 1px solid black;
 	}
@@ -59,7 +94,8 @@
 			width: 100%;
 		}
 		#question {
-			height: 100px;
+			height: 125px;
+			padding: 5px 0 0 0;
 			clear: both;
 			h3 {
 				text-align: left;
@@ -80,7 +116,8 @@
 			background-color: #fff;
 		}
 		#sp_question {
-			height: 100px;
+			height: 125px;
+			padding: 5px 0 0 0;
 			width: 33.3%;
 			float:left;
 			h3 {
