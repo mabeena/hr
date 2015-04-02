@@ -10,12 +10,17 @@ class Employee < ActiveRecord::Base
     has_many :employee_trainings
     has_many :employee_skills
     has_many :employee_educations
-    belongs_to :positions
+    belongs_to :position
 	
 	def employee_name
 		a = fname + ' ' + lname
 		a.titleize
 	end
+	
+	def emp_role
+		position.role
+	end
+
 	
 	def self.search(query)
     	where("fname like ? OR lname like ?", "%#{query}%", "%#{query}%") 

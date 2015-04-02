@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150209003055) do
     t.string   "lname"
     t.integer  "position_id"
     t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "updated_at" 
   end
 
   add_index "employees", ["email"], name: "index_employees_on_email", unique: true
