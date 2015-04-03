@@ -1,5 +1,28 @@
-<% if current_employee.emp_role == "Manager" %>
-hi manager
-<% else %>
-you are not manager
-<% end %>
+<div id="promotion">
+	<%= form_tag(promotions_path, :method => "get") do %>
+		 <%= select_tag :degree, options_for_select((["diploma/GED","bachelor's", "master's"]), params[:search] ) %>
+  		 <%= select_tag :level, options_for_select((["A3", "B1", "B2", "B3", "C1", "C2", "C3", "D", "E"]), params[:search]) %>
+		<%= submit_tag "Search", :name => nil %>
+		<%= link_to "Reset Search", promotions_path %>
+	<% end %>
+
+	<% @employees.each do |employee| %>
+		<%= employee.employee_name %>
+		<% @employee_educations.each do |employee_education| %>
+			<% if employee_education.employee_id == employee.id %> 
+				<%= employee_education.ed_name %>
+				<% @positions.each do |position| %>
+					<% if position.id == employee.position_id %>
+						<%= position.pos_name %><br/>
+					    <% @evaluations.each do |evaluation| %>
+							<% if evaluation.employee_id == employee.id %>
+								<%= evaluation.evalScore %>	
+							<% end %>
+						<% end %>	
+					<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% end %>	
+</div>
+

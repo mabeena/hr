@@ -9,4 +9,8 @@ class Education < ActiveRecord::Base
 	def education_name
 		degree + ' ' + concentration
 	end
+
+	def self.search(query)
+    	where("degree like ?", "%#{query}%") 
+    end	
 end

@@ -22,8 +22,18 @@ class Employee < ActiveRecord::Base
 	end
 
 	
-	def self.search(query)
-    	where("fname like ? OR lname like ?", "%#{query}%", "%#{query}%") 
-    end	
+#	def self.search(query)
+#    	where("fname like ? AND lname like ?", "%#{query}%", "%#{query}%")
+    
+#  end
+  
+  #def self.search(params)
+    
+   #        where(educations: params[:degree], positions: params[:level])
+    #       .includes(:educations, :positions)
+   
+  #end
+
+ 
 end
 
