@@ -1,5 +1,3 @@
-<% if current_employee.emp_role == "Manager" %>
-hi manager
-<% else %>
-you are not manager
+<%= @educations.each do |e|%>
+<%= e %>
 <% end %>
