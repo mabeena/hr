@@ -1,3 +1,23 @@
-<%= @educations.each do |e|%>
-<%= e %>
+<div id="promotion">
+<%= form_tag promotions_path, method: :get do %>
+	<%= select_tag :position_level, options_for_select(@pos_itions, params[:position_level]), :prompt => 'Level' %>
+	<%= select_tag :education_degree, options_for_select(@edu_cations, params[:education_degree]), :prompt => 'Degree' %>
+	<%= submit_tag "Search", name: nil %> or <%= link_to "Reset", promotions_path %>
+<% end %> 
+<% @education_search.each do |e| %>
+	<% @employee_educations.each do |emp_edu|%>
+		<% if e.id == emp_edu.education_id %>
+			<% @employees.each do |emp| %>
+				<% if emp_edu.employee_id == emp.id %>
+					<% @position_search.each do |p| %>
+						<% if emp.position_id == p.id %>
+							<%= emp.employee_name %>
+							<%= emp_edu.ed_name %>
+							<%= p.level %> <br />
+						<% end %>
+					<% end %>
+				<% end %>
+			<% end %>
+		<% end %>
+	<% end %>
 <% end %>

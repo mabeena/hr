@@ -10,4 +10,8 @@ class Position < ActiveRecord::Base
 	def emp_role
 		role
 	end
+	
+	def self.search search_term
+  		where(['level LIKE ?', "%#{search_term}%"])
+  	end
 end

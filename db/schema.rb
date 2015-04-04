@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150209003055) do
+ActiveRecord::Schema.define(version: 20150403221546) do
 
   create_table "educations", force: true do |t|
     t.string   "degree"
@@ -49,7 +49,7 @@ ActiveRecord::Schema.define(version: 20150209003055) do
     t.string   "lname"
     t.integer  "position_id"
     t.datetime "created_at"
-    t.datetime "updated_at" 
+    t.datetime "updated_at"
   end
 
   add_index "employees", ["email"], name: "index_employees_on_email", unique: true
@@ -80,6 +80,14 @@ ActiveRecord::Schema.define(version: 20150209003055) do
     t.string   "name"
     t.string   "level"
     t.string   "role"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "promotions", force: true do |t|
+    t.string   "degree"
+    t.string   "level"
+    t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
