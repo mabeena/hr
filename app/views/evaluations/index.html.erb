@@ -3,12 +3,12 @@
 		<h1>Ratings You Filed</h1>
 		<p class="title">Employee</p>
 		<p class="title">Rating</p>
-		<% @evaluations.each do |e| %>
-			<% if current_employee.id == e.rater_id %>
+		<% @evaluation.each do |e| %>
+			<% if e.rater_id == current_employee.id %>
 				<p><%= e.emp_name %></p>
 				<p><%= e.friendlyScale %></p>
 			<% else %>
-				You have not rated anyone yet
+				
 			<% end %>
 		<% end %>
 		<div id="ratingLink">
@@ -17,14 +17,12 @@
 	</div>
 	<div id="received">
 		<h1>Your Ratings</h1>
-		<% @rated.each do |e| %>
-			<% if current_employee.id == e.employee_id %>
-				<p>
-					<%= e.rater_id %>
-					<%= e.evalScore %>
-				</p>
-			<% else %>
-				You have not been evaluated yet
+		<p class="title">Rater</p>
+		<p class="title">Rating</p>
+		<% @raters.each do |rate| %>
+			<% if current_employee.id == rate.employee_id %>
+				<p><%= rate.rater_id %></p>
+				<p><%= rate.friendlyScale %></p>
 			<% end %>
 		<% end %>
 	</div>

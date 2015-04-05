@@ -11,14 +11,18 @@ before_save :insertScore
 	def emp_name
 		employee.employee_name
 	end
-	
+	def findRater
+		a = rater_id
+		b = employee.id
+		data = Employee.select(:fname).where("a == b")
+		return data
+	end
 	def p
 		performance = ((self.gScore/5) * 0.5) + ((self.qScore/5) * 0.3) + ((self.iScore/5) * 0.2)
 		p = performance * 0.35
 	end
 	def l
-		leadership = ((self.rScore/5) * 0.275) + ((self.aScore/5) * 0.275) + ((self.mScore/5) * 0.25) 
-		+ ((self.isScore/5) * 0.2)
+		leadership = ((self.rScore/5) * 0.275) + ((self.aScore/5) * 0.275) + ((self.mScore/5) * 0.25) + ((self.isScore/5) * 0.2)
 		l = leadership * 0.25	
 	end
 	def m
@@ -30,19 +34,19 @@ before_save :insertScore
 		c = competence * 0.15
 	end
 	def per
-		per = p * 100
+		per = (p * 100)*4
 	end
 	def lea
-		lea = l * 100
+		lea = (l * 100)*4
 	end
 	def mgm
-		mgm = m * 100
+		mgm = (m * 100)*4
 	end
 	def com
-		com = c * 100
+		com = (c * 100)*4
 	end
 	def evalScore
-		evalScore = (p + l + m + c)*100
+		self.evalScore = (p + l + m + c)*100
 	end
 	def friendlyScale
 		if self.evalScore > 85
@@ -54,7 +58,7 @@ before_save :insertScore
 		end
 	end
 	def insertScore
-  		self.evalScore = (p + l + m + c)*100
+  		evalScore
   		return true
 	end
 end

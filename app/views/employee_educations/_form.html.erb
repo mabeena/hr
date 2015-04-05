@@ -1,5 +1,5 @@
 <%= form_for(@employee_education) do |f| %>
-    <%= f.collection_select :employee_id, @employees, :id, :employee_name %>
-    <%= f.collection_select :education_id, @educations, :id, :education_name %>
+    <%= f.collection_select :employee_id, @employees, :id, :employee_name, :prompt => 'Employee' %>
+    <%= f.collection_select :education_id, @educations, :id, :education_name, :prompt => 'Education' %>
     <%= f.submit "Submit" %>
 <% end %>

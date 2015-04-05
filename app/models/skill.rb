@@ -6,7 +6,7 @@ class Skill < ActiveRecord::Base
 		name.humanize
 	end
 	def skill_name
-		name + ' ' + stype
+		name
 	end
 	def self.search search_term
   		where(['name LIKE ?', "%#{search_term}%"])

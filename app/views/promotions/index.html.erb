@@ -1,23 +1,35 @@
 <div id="promotion">
-<%= form_tag promotions_path, method: :get do %>
-	<%= select_tag :position_level, options_for_select(@pos_itions, params[:position_level]), :prompt => 'Level' %>
-	<%= select_tag :education_degree, options_for_select(@edu_cations, params[:education_degree]), :prompt => 'Degree' %>
-	<%= submit_tag "Search", name: nil %> or <%= link_to "Reset", promotions_path %>
-<% end %> 
-<% @education_search.each do |e| %>
-	<% @employee_educations.each do |emp_edu|%>
-		<% if e.id == emp_edu.education_id %>
-			<% @employees.each do |emp| %>
-				<% if emp_edu.employee_id == emp.id %>
-					<% @position_search.each do |p| %>
-						<% if emp.position_id == p.id %>
-							<%= emp.employee_name %>
-							<%= emp_edu.ed_name %>
-							<%= p.level %> <br />
+	<%= form_tag promotions_path, method: :get do %>
+		<p class="find">Find Candidates</p>
+		<%= select_tag :position_level, options_for_select(@pos_itions, params[:position_level]), :prompt => 'Position Level' %>
+		<%= select_tag :education_degree, options_for_select(@edu_cations, params[:education_degree]), :prompt => 'Education Level' %>
+		<%= select_tag :skill_name, options_for_select(@sk_ills, params[:skill_name]), :prompt => 'Main Skill' %>
+		<%= submit_tag "Search", name: nil %>
+		<p class="reset"><%= link_to "Reset", promotions_path %></p>
+	<% end %> 
+	<div id="results_list">
+		<% @education_search.each do |e| %>
+			<% @employee_educations.each do |emp_edu|%>
+				<% if e.id == emp_edu.education_id %>
+					<% @employees.each do |emp| %>
+						<% if emp_edu.employee_id == emp.id %>		
+							<% @evaluations.each do |eval| %>
+								<% if emp.id == eval.employee_id %>	
+									<% @position_search.each do |p| %>
+										<% if emp.position_id == p.id %>	
+											<div id="indy_list">
+												<p class="emp_name"><%= emp.employee_name %> | <%= eval.evalScore.to_i %>%</p>
+												<p class="detail_name"><%= emp_edu.ed_name %></p>
+												<p class="detail_name">Level: <%= p.level %></p>
+											</div>
+										<% end %>
+									<% end %>	
+								<% end %>
+							<% end %>	
 						<% end %>
 					<% end %>
 				<% end %>
 			<% end %>
 		<% end %>
-	<% end %>
-<% end %>
+	</div>
+</div>

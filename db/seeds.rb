@@ -7,7 +7,7 @@
 # 
 # ----------------------------------------------------
 
-Employee.create(:email =>"anees.merzi@dell.com", :password =>"password", :fname =>"Anees", :lname =>"Merzi", :position_id =>"6")
+Employee.create(:email =>"anees.merzi@dell.com", :password =>"password", :fname =>"Anees", :lname =>"Merzi", :position_id =>"73")
 
 #SUPPORT TABLES
 #EDUCATION TABLE

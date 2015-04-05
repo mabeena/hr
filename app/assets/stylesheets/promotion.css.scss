@@ -2,4 +2,75 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#promotion{overflow: scroll; height:100%;}
+#promotion {
+	width: 100%;
+	margin: 0;
+	height: 100%;
+	form {
+		float: left;
+		width: 20%;
+		height: 100%;
+		background-color: #656464;
+		.find{
+			width: 100%;
+			font-size: 27px;
+			background-color: #fff;
+			text-align: center;
+			padding: 25px 0 25px 0;
+			font-weight: bold;
+		}
+		select{
+			width: 228px;
+			height: 54px;
+			padding-left: 5px;
+			border: 1px solid #fff;
+			font-size: 25px;
+			margin: 0 0 20px 13px;
+		}
+		input[type="submit"]  {
+			background-color: #33cc77;
+			color: #fff;
+			width: 230px;
+			height: 55px;
+			cursor: pointer;
+			font-size: 25px;
+			margin: 0 0 0 13px;
+		}
+		.reset {
+			padding: 10px 0 0 0;
+			margin: 20px 0 0 13px;
+			a {
+				background-color: #f95252;
+				color: #fff;
+				width: 228px;
+				padding: 10px 80px 10px 80px;
+				height: 38px;
+				cursor: pointer;
+				text-decoration: none;
+				font-size: 25px;
+			}
+		}
+	}
+	#results_list {
+		float: left;
+		width: 80%;
+		height: 100%;
+		overflow: scroll;
+		#indy_list{
+			width: 33.3%;
+			float:left;
+			border-bottom: 1px solid black;
+			.emp_name, .detail_name {
+				margin: 0;
+				padding: 5px 5px 0 5px;
+			}
+			.emp_name {
+				font-size: 22px
+			}
+			.detail_name {
+				font-size: 16px;
+				
+			}
+		}
+	}
+}

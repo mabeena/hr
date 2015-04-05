@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :evaluations
   resources :positions
   devise_for :employees
+  resources :employees
   get "home/show"
   resources :promotions
 

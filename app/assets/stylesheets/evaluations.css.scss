@@ -173,3 +173,42 @@
 		}
 	}
 }
+#e_overview {
+	width: 100%;
+	height: 100%;
+	h1 {
+		font-size: 35px;
+		margin:0;
+		text-align: center;
+		background-color: #fff;
+		padding: 10px 0 60px 0;
+	}
+	.addskill, .finish {
+		float: left;
+		margin: 0;
+		text-align: center;
+		a {	
+			width: 100px;
+			margin: 0;
+			height: 38px;
+			cursor: pointer;
+			font-size: 20px;
+			text-decoration: none;
+			color: #fff;
+		}
+	}
+	.addskill {
+		background-color: #33cc77;
+		padding: 14px 30px 13px 30px;
+		position: absolute;
+		left: 465px;
+		top: 85px;
+	}
+	.finish {
+		background-color: #242424;
+		padding: 14px 50px 13px 50px;
+		position: absolute;
+		left: 638px;
+		top: 85px;
+	}
+}

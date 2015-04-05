@@ -1,12 +1,78 @@
-<div id="eval_skills">
-	<div class="eval_rollup">
-		<h1>You Created an Evaluation on <%= @evaluation.emp_name %></h1> 
-			<p>Performance Score <%= @evaluation.per.to_i %></p>
-			<p>Leadership Score <%= @evaluation.lea.to_i %></p>
-			<p>Management Score <%= @evaluation.mgm.to_i %></p>
-			<p>Competence Score <%= @evaluation.com.to_i %></p>
-			<p>Overal Score Rating: <%= @evaluation.evalScore %>%</p>
-	</div>
-		
-	<%= link_to 'Add Skills', employee_skills_path %> or <%= link_to 'Finish', evaluations_path %>
+<div id="e_overview">
+	<h1>Evaluation Overview For <%= @evaluation.emp_name %>
+		<p class="addskill"><%= link_to 'Add Skills', employee_skills_path %></p>
+		<p class="finish"><%= link_to 'Finish', evaluations_path %></p>
+	</h1>
+	<script type="text/javascript">
+	  google.load("visualization", "1", {packages:["gauge"]});
+	  google.setOnLoadCallback(drawChart);
+	  function drawChart() {
+	
+		var data = google.visualization.arrayToDataTable([
+		  ['Label', 'Value'],
+		  ['Performance', <%= @evaluation.per.to_i %>],
+		  ['Leadership', <%= @evaluation.lea.to_i %>]
+		]);
+	
+		var options = {
+		  width: '100%', height: '100%',
+		  greenFrom: 70, greenTo: 100,	  
+		  redFrom: 0, redTo: 30,
+		  minorTicks: 5
+		};
+	
+		var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+	
+		chart.draw(data, options);
+	  }
+	</script>
+	<script type="text/javascript">
+	  google.load("visualization", "1", {packages:["gauge"]});
+	  google.setOnLoadCallback(drawChart);
+	  function drawChart() {
+	
+		var data = google.visualization.arrayToDataTable([
+		  ['Label', 'Value'],
+		  ['Managements', <%= @evaluation.mgm.to_i %>],
+		  ['Competence', <%= @evaluation.com.to_i %>]
+		]);
+	
+		var options = {
+		  width: '100%', height: '100%',
+		  greenFrom: 70, greenTo: 100,	  
+		  redFrom: 0, redTo: 30,
+		  minorTicks: 5
+		};
+	
+		var chart = new google.visualization.Gauge(document.getElementById('chart_div1'));
+	
+		chart.draw(data, options);
+	  }
+	</script>
+	<script type="text/javascript">
+	  google.load("visualization", "1", {packages:["gauge"]});
+	  google.setOnLoadCallback(drawChart);
+	  function drawChart() {
+	
+		var data = google.visualization.arrayToDataTable([
+		  ['Label', 'Value'],
+		  ['Overall Score', <%= @evaluation.evalScore %>]
+		]);
+	
+		var options = {
+		  width: '100%', height: '100%',
+		  greenFrom: 70, greenTo: 100,	  
+		  redFrom: 0, redTo: 30,
+		  minorTicks: 5
+		};
+	
+		var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
+	
+		chart.draw(data, options);
+	  }
+	</script>
+	<div id="chart_div" style="width: 220px; height: 620px; position: absolute; top: 165px; left: 75px"></div>
+	<div id="chart_div1" style="width: 220px; height: 620px; position: absolute; top: 165px; left: 975px"></div>
+	<div id="chart_div2" style="width: 565px; height: 565px; position: absolute; top: 117px; left: 350px"></div>
 </div>
+

@@ -27,45 +27,44 @@
 	opacity: 0.7;
 	h1 {
 		margin: 0;
-		font-size: 135px;
+		font-size: 140px;
 		text-align: center;
-		padding-top: 80px;
+		padding-top: 55px;
 		text-shadow:3px 3px #000000;
 		color:#f4f4f4;
 		font-family:helvetica, sans-serif;	
 		span {
 			font-style:italic;
-			color:#ffffff;
+			color:#fff;
 		}
 	}
 }	
 
 #userAuth{
 	margin: 0;
-	padding-top: 50px;
+	padding-top: 30px;
 }
 .login{
 	float: right;
-	margin: 0 45px 0 0;
+	margin: 40px 45px 0 0;
 	background-color: #fff;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	opacity: .9;
 }
 
-h2 {
+h2 {	
 	background-color: #f95252;
 	color: #fff;
-	font-size: 28px;
+	font-size: 34px;
 	text-align: center;
 	margin: 0 auto;
 	padding: 10px 0 10px 0;
 	width: 377px;
 }
-
 .login form p {
 	color: black;
 	padding: 10px 0 0 25px;
-	margin: 0 auto;
+	margin: 10px 0 0 0;
 }
 
 .login input{
@@ -84,6 +83,8 @@ h2 {
 	width: 327px;
 	cursor: pointer;
 	border: 1px solid black;
+	font-size: 30px;
+	font-weight: bold;
 }
 
 .login input[type="submit"]:hover, .register input[type="submit"]:hover {
@@ -94,14 +95,14 @@ h2 {
 	float: left;
 	margin: 0 0 0 45px;
 	background-color: #fff;
-	padding-bottom: 20px;
+	padding-bottom: 40px;
 	opacity: .9;
 }
 
 .register form p {
 	color: black;
 	padding: 10px 0 0 20px;
-	margin: 0 auto;
+	margin: 10px 0 0 0;
 }
 .name{
 	width: 120px;
@@ -129,6 +130,8 @@ h2 {
 	margin: 0 auto;
 	width: 335px;
 	cursor: pointer;
+	font-size: 30px;
+	font-weight: bold;
 }
 .register select{
 	width: 164px;

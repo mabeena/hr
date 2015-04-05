@@ -1,13 +1,14 @@
 class EvaluationsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_employee!
   before_action :set_evaluation, only: [:show, :edit, :update, :destroy]
 
   respond_to :html
 
   def index
     @evaluations = Evaluation.all
+    @evaluation = Evaluation.all
     @employees = Employee.order(fname: :asc)
-    @rated = Evaluation.limit(1)
+    @raters = Evaluation.all
   end
 
   def show
@@ -46,6 +47,6 @@ class EvaluationsController < ApplicationController
     end
 
     def evaluation_params
-      params.require(:evaluation).permit(:employee_id, :rater_id, :gScore, :qScore, :iScore, :rScore, :aScore, :mScore, :isScore, :owScore, :dScore, :oScore, :kScore, :pScore, :lScore, :evalScore)
+      params.require(:evaluation).permit(:employee_id, :rater_id, :gScore, :qScore, :iScore, :rScore, :aScore, :mScore, :isScore, :owScore, :dScore, :oScore, :kScore, :pScore, :lScore, :evalScore, :avgScore)
     end
 end

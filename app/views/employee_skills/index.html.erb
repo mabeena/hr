@@ -12,12 +12,12 @@
 			<p class="emp_name"><%= employee.employee_name %></p>
 			<% @employee_skills.each do |employee_skill| %>
 				<% if employee_skill.employee_id == employee.id %>
-					<p class="detail_name"><%= employee_skill.sk_name %>
+					<p class="detail_name"><%= employee_skill.sk_name %></p>
 				<% end %>
-			<% end %>
-			<br /></p> 
+			<% end %>	 
 		</div>
 	<% end %>
 <% end %>
 </div>
 <%= render 'form'  %>
+
