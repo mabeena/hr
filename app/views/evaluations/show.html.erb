@@ -33,7 +33,7 @@
 	
 		var data = google.visualization.arrayToDataTable([
 		  ['Label', 'Value'],
-		  ['Managements', <%= @evaluation.mgm.to_i %>],
+		  ['Management', <%= @evaluation.mgm.to_i %>],
 		  ['Competence', <%= @evaluation.com.to_i %>]
 		]);
 	
@@ -56,7 +56,7 @@
 	
 		var data = google.visualization.arrayToDataTable([
 		  ['Label', 'Value'],
-		  ['Overall Score', <%= @evaluation.evalScore %>]
+		  ['Overall Score', <%= @evaluation.evalScore.to_i %>]
 		]);
 	
 		var options = {

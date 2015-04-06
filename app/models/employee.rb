@@ -20,6 +20,12 @@ class Employee < ActiveRecord::Base
 	def emp_role
 		position.role
 	end
+	def emp_title
+		b = "(#{emp_role})"
+		a = position.pos_role
+		c = a.titleize + ' '+ b.upcase
+		return c
+	end
 
 	
 	def self.search(query)

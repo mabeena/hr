@@ -16,10 +16,12 @@ class PromotionsController < ApplicationController
     end
 	def create
 		@promotions = Promotion.create(search_params)
-		@promotion = Promotion.find(params[:id])
+		@promotion.employee_id = params[:id]
 		redirect_to promotions_url
 	end
 	def show
+		@evaluation = Evaluation.all
+		@employee = Employee.all
 	end
 
 	private

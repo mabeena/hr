@@ -15,18 +15,18 @@
 				<ul>
 					<li><%= link_to 'HOME', root_path %></li>
 					<% if current_employee.emp_role == "Human Resources" %>
-						<li><%= link_to 'PROMOTION D', promotions_path %></li>
-						<li><%= link_to 'EVALUATION', evaluations_path %></li>
-						<li><%= link_to 'SKILL', employee_skills_path %></li>
-						<li><%= link_to 'EDUCATION', employee_educations_path %></li>	
+						<li><%= link_to 'PROMOTION DSS', promotions_path %></li>
+						<li><%= link_to 'EVALUATIONS', evaluations_path %></li>
+						<li><%= link_to 'SKILLS', employee_skills_path %></li>
+						<li><%= link_to 'EDUCATIONS', employee_educations_path %></li>	
 					<% elsif current_employee.emp_role == "Manager" %>
-						<li><%= link_to 'EVALUATION', evaluations_path %></li>
-						<li><%= link_to 'SKILL', employee_skills_path %></li>
+						<li><%= link_to 'EVALUATIONS', evaluations_path %></li>
+						<li><%= link_to 'SKILLS', employee_skills_path %></li>
 					<% elsif current_employee.emp_role == "Supervisor" %>
-						<li><%= link_to 'EVALUATION', evaluations_path %></li>
-						<li><%= link_to 'SKILL', employee_skills_path %></li>
+						<li><%= link_to 'EVALUATIONS', evaluations_path %></li>
+						<li><%= link_to 'SKILLS', employee_skills_path %></li>
 					<% else %>
-						<li><%= link_to 'EVALUATION', evaluations_path %></li>
+						<li><%= link_to 'EVALUATIONS', evaluations_path %></li>
 					<% end %>
 				</ul>
 			</div>

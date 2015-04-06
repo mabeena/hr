@@ -7,6 +7,10 @@ class Position < ActiveRecord::Base
 		name + ' ' + level
 	end
 	
+	def pos_role
+		name
+	end
+	
 	def emp_role
 		role
 	end

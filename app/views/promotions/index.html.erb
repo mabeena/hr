@@ -18,7 +18,7 @@
 									<% @position_search.each do |p| %>
 										<% if emp.position_id == p.id %>	
 											<div id="indy_list">
-												<p class="emp_name"><%= emp.employee_name %> | <%= eval.evalScore.to_i %>%</p>
+												<p class="emp_name"><%= link_to emp.employee_name, promotion_path(:id => emp.id) %> | <%= eval.evalScore.to_i %>%</p>
 												<p class="detail_name"><%= emp_edu.ed_name %></p>
 												<p class="detail_name">Level: <%= p.level %></p>
 											</div>
