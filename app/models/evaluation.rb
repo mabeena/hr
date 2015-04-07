@@ -49,9 +49,9 @@ before_save :insertScore
 		self.evalScore = (p + l + m + c)*100
 	end
 	def friendlyScale
-		if self.evalScore > 85
+		if self.evalScore > 70
 			"excels"
-		elsif self.evalScore > 70
+		elsif self.evalScore > 30
 			"attains"
 		else		
 			"needs improvement"
