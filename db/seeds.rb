@@ -186,7 +186,6 @@ Position.create(:name =>"engineer lead", :level =>"A3", :role =>"Team Leader")
 
 #5 HR
 Position.create(:name =>"hr team lead", :level =>"A3", :role =>"Human Resources")
-
 #-----------------------------------------------------
 #SKILL TABLE
 #technical

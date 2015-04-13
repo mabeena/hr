@@ -4,6 +4,7 @@
 		<%= select_tag :position_level, options_for_select(@pos_itions, params[:position_level]), :prompt => 'Position Level' %>
 		<%= select_tag :education_degree, options_for_select(@edu_cations, params[:education_degree]), :prompt => 'Education Level' %>
 		<%= select_tag :skill_name, options_for_select(@sk_ills, params[:skill_name]), :prompt => 'Main Skill' %>
+		<%= text_field_tag :search, params[:search], placeholder: "Search Employees" %>
 		<%= submit_tag "Search", name: nil %>
 		<p class="reset"><%= link_to "Reset", promotions_path %></p>
 	<% end %> 
@@ -16,7 +17,7 @@
 							<% @evaluations.each do |eval| %>
 								<% if emp.id == eval.employee_id %>	
 									<% @position_search.each do |p| %>
-										<% if emp.position_id == p.id %>	
+										<% if emp.position_id == p.id %>
 											<div id="indy_list">
 												<p class="emp_name"><%= link_to emp.employee_name, promotion_path(:id => emp.id) %> | <%= eval.evalScore.to_i %>%</p>
 												<p class="detail_name"><%= emp_edu.ed_name %></p>

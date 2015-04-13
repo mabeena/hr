@@ -9,6 +9,9 @@ class Education < ActiveRecord::Base
 	def education_name
 		degree + ' ' + concentration
 	end
+	def edname
+		degree + ': ' + concentration
+	end
 	def deg
 		degree
 	end

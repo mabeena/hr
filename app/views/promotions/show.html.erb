@@ -1,7 +1,7 @@
 <div id="empDetail">
 	<% @employee.each do |emp| %>
 		<% if params[:id].to_s == emp.id.to_s %>
-			<h1><%= emp.employee_name %></h1>
+			<h1>Overview of <%= emp.employee_name %></h1>
 	<div id="empScore">
 		<h1>Latest Evaluation As <%= emp.emp_title %></h1>
 		<% end %>
@@ -62,10 +62,21 @@
 	</div>
 	<div id="empEd">
 		<h1>Education</h1>
-		<%= %>
+		<% @employee_education.each do |edu| %>
+			<% if params[:id].to_s == edu.employee_id.to_s %>
+				<p><%= edu.degree_deg %><br /><br />
+				<%= edu.degree_con %></p>
+			<% else %>
+			<% end %>
+		<% end %>
 	</div>
 	<div id="empSkill">
 		<h1>Skills</h1>
-		<%= %>
+		<% @employee_skill.each do |skill| %>
+			<% if params[:id].to_s == skill.employee_id.to_s %>
+				<p><%= skill.sk_name %></p>
+			<% else %>
+			<% end %>
+		<% end %>
 	</div>
 </div>

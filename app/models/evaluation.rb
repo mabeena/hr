@@ -34,7 +34,11 @@ before_save :insertScore
 		c = competence * 0.15
 	end
 	def per
-		per = (p * 100)*4
+		if p > 0.34
+			per = (p * 100)*2.86
+		else
+			per = 100
+		end
 	end
 	def lea
 		lea = (l * 100)*4
@@ -43,7 +47,7 @@ before_save :insertScore
 		mgm = (m * 100)*4
 	end
 	def com
-		com = (c * 100)*4
+		com = (c * 100)*6.67
 	end
 	def evalScore
 		self.evalScore = (p + l + m + c)*100
@@ -61,4 +65,7 @@ before_save :insertScore
   		evalScore
   		return true
 	end
+	def self.search searchie
+  		where(['evalScore LIKE ?', "%#{searchie}%"])
+  	end
 end
