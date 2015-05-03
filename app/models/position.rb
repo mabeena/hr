@@ -6,13 +6,16 @@ class Position < ActiveRecord::Base
 	def pos_name
 		name + ' ' + level
 	end
+	def position_rollup
+		name + ' ' + level + ' ' + role
+	end
 	
 	def pos_role
 		name
 	end
 	
 	def emp_role
-		role
+		role.titleize
 	end
 	
 	def self.search search_term

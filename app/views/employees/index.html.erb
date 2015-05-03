@@ -1,0 +1,15 @@
+<div id="search">
+	<%= form_tag edit_indy_employees_path do %>
+		<%= submit_tag "Edit Positions" %>
+</div>
+<div id="emp_indy_listing">
+	<% @employees.each do |e| %>
+		<div id="indy_list">
+			<p class="emp_name"><%= e.employee_name %></p>
+			<p class="detail_name"><%= e.posrole %>
+			<p class="detail_name"><%= e.emprole %>
+			<p class="detail_name"><%= e.level %>
+		</div>
+	<% end %>
+</div>
+<% end %>

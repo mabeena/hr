@@ -1,0 +1,79 @@
+<script type="text/javascript">
+	google.load("visualization", "1", {packages:["gauge"], callback:function(){drawChart();}});
+	google.setOnLoadCallback(drawSeriesChart);
+
+	function drawSeriesChart() {
+	  var data = google.visualization.arrayToDataTable([
+		['ID', 									'', 			'',     	'Type', 	''],
+		['web design',    						23,             90,      'Technical',  5210],
+		['web development',    					51,             57,      'Technical',    11114],
+		['user experience',    					100,            92,      'Technical',    5180],
+		['procedural programming',    			65,             78,      'Technical',    11110],
+		['object oriented programming',    		70,             82,      'Technical',    7140],
+		['scripting languages',    				35,             97,      'Technical',  	3350],
+		['application security',    			30,             66,      'Technical',    11127],
+		['device mgmt',    						55,             91,      'Technical',    11175],
+		['mobile app development',    			20,             18,      'Technical',    4120],
+		['sql',    								45,             139,     'Technical',    3110],
+		['big data',    						80,             134,     'Technical',    4170],
+		['nosql',    							65,             124,     'Technical',    12150],
+		['analytics',    						97,             70,     'Technical',    1216],
+		['db admin',    						65,             40,     'Technical',    1212],
+		['cloud admin',    						100,            30,     'Technical',    1317],
+		['networking',    						75,             33,     'Technical',    1411],
+		['sharepoint',    						80,             182,     'Technical',    1312],
+	
+		['presenter',    						82,             39,     'Business',  	7150],
+		['leadership',    						46,             62,     'Business',  	2104],
+		['team builder',    					39,             26,     'Business',  	11209],
+		['problem solver',    					10,             24,     'Business',  	7119],
+		['coordinator',    						51,             95,     'Business',  	11144],
+		['business intel',    					30,             155,     'Business',  	11164],
+		['risk management',    					65,             144,     'Business',  	6114],
+		['project management',    				10,             76,     'Business',  	1414],
+		['program management',    				105,            88,     'Business',  	11114],
+		['scrum',    							30,             56,     'Business',  	2114],
+		['lean methodologies',    				35,             139,     'Business',  	11117],        
+		['strategic planning',    				40,             32,     'Business',  	2101],        
+		['flow charts',    						75,             95,     'Business',  	3101],        
+		['adobe suite',    						50,             120,     'Business',  	8111],        
+		['microsoft suite',    					85,             109,     'Business',  	341],        
+		['excel reporting',    					70,             91,     'Business',  	1114],        
+		['sap',    								65,             41,     'Business',  	30],        
+		['social media',    					70,             31,     'Business',  	24],        
+		['interpret analytics',    				78,             28,     'Business',  	19],        
+		['product marketing',    				75,             51,     'Business',  	15],        
+		['employee tracking',    				80,             134,     'Business',  	32],        
+		['payroll reporting',    				85,             109,     'Business',  	35],        
+		['financial auditing',    				96,             118,     'Business',  	20] 
+	  ]);
+
+	  var options = {
+		bubble: {textStyle: {fontSize: 11}},
+		chartArea:{left:0, top:0, width:'100%', height:'100%'}, 
+		titleTextStyle: {fontSize: 21},
+		fontSize: 16,
+		alignment: "center",
+		legend: 'none',
+		hAxis: {
+			gridlines: {
+				color: "#fff"
+			},
+			textStyle: {color: "#fff"},
+			baselineColor: '#fff'
+		},
+		vAxis: {
+			gridlines: {
+				color: "#fff"
+			},
+			textStyle: {color: "#fff"},
+			baselineColor: '#fff'
+		}
+	  };
+
+	  var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
+	  chart.draw(data, options);
+	}
+	setInterval(drawSeriesChart, 1000);
+</script>
+<div id="series_chart_div" style="width: 600px; height: 320px; position: absolute; top: 333px; left: 698px"></div>

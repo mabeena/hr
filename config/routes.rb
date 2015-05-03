@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   resources :educations
   resources :evaluations
   resources :positions
-  devise_for :employees
-  resources :employees
-  get "home/show"
   resources :promotions
+  devise_for :employees
+  resources :employees do
+    post 'edit_indy', :on => :collection
+    put 'update_indy', :on => :collection
+  end
+  get "home/show"
 
 
   

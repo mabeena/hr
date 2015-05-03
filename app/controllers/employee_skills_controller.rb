@@ -13,7 +13,8 @@ class EmployeeSkillsController < ApplicationController
   	@skills = Skill.all
     @employee_skills = EmployeeSkill.all
     @employee_skill = EmployeeSkill.new
-    respond_with(@employee_skills)
+
+	respond_with(@employee_skills)
   end
 
   def show

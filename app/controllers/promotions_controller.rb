@@ -1,26 +1,24 @@
 class PromotionsController < ApplicationController 
 	def index
-		if params[:search]
-      		@evaluations = Evaluation.search(params[:search])
-      		#@skills = Skill.search(params[:search])
-    	else
-      		@evaluations = Evaluation.all
-      		#@skills = Skill.all
-    	end
-		
 	    @education_search = Education.search(params[:education_degree]).all
 		@position_search = Position.search(params[:position_level]).all
 		@skill_search = Skill.search(params[:skill_name]).all
-		@rating_search = Evaluation.search(params[:evalScore]).all
-      	@employees = Employee.all
- 	  	@educations = Education.all
- 	  	@skills = Skill.all
+		
+		
+ 	  	
  	  	@edu_cations = @education_search.uniq.pluck(:degree)
  	  	@pos_itions = @position_search.uniq.pluck(:level)
  	  	@sk_ills = @skill_search.uniq.pluck(:name)
+ 	  	
+ 	  	@employees = Employee.all
+ 	  	@educations = Education.all
+ 	  	@employee_skills = EmployeeSkill.all
+ 	  	@skill = Skill.all
  		@employee_educations = EmployeeEducation.all
- 		@employee_skills = EmployeeSkill.all
  		@positions = Position.all
+ 		@evaluations = Evaluation.all
+ 		
+ 		@a = EmployeeSkill.joins(:skill, :employee).select("skill_id", "employee_id", "name")
     end
 	def create
 		@promotions = Promotion.create(search_params)

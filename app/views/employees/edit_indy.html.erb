@@ -1,0 +1,15 @@
+<div id="search">
+	<%= form_tag update_indy_employees_path, :method => :put do %>
+		<%= submit_tag "Submit" %>
+</div>
+<div id="emp_indy_listing">
+		<% @employees.each do |employee| %>  
+			<div id="indy_list">
+				<p class="emp_name"><%= employee.employee_name %></p>
+				<%= fields_for "employees[]", employee do |f| %> 
+					<%= render 'fields', :f => f %>
+				<% end %>  
+			</div>
+	   <% end %>
+	<% end %>
+</div>

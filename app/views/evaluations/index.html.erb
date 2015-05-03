@@ -1,19 +1,23 @@
 <div id="rating_listing">
 	<div id="rated">
-		<h1>Ratings You Filed</h1>
-		<p class="title">Employee</p>
-		<p class="title">Rating</p>
-		<% @evaluation.each do |e| %>
-			<% if e.rater_id == current_employee.id %>
-				<p><%= e.emp_name %></p>
-				<p><%= e.friendlyScale %></p>
-			<% else %>
-				
+		<% if current_employee.emp_role != "Team Leader" %>
+			<h1>Ratings You Filed</h1>
+			<p class="title">Employee</p>
+			<p class="title">Rating</p>
+			<% @evaluation.each do |e| %>
+				<% if e.rater_id == current_employee.id %>
+					<p><%= e.emp_name %></p>
+					<p><%= e.friendlyScale %></p>
+				<% end %>
 			<% end %>
+		<% else %>
+			<h1>You Can Not Rate Anyone Yet</h1>
 		<% end %>
-		<div id="ratingLink">
-			<%= link_to 'Create New Evaluation', new_evaluation_path %>
-		</div>
+			<% if current_employee.emp_role != "Team Leader" %>
+				<div id="ratingLink">
+					<%= link_to 'Create New Evaluation', new_evaluation_path %>
+				</div>
+			<% end %>
 	</div>
 	<div id="received">
 		<h1>Most Current Rating for <%= current_employee.employee_name %> </h1>
@@ -29,8 +33,7 @@
 						  ['Performance', <%= rate.per.to_i %>],
 						  ['Leadership', <%= rate.lea.to_i %>],
 						  ['Management', <%= rate.mgm.to_i %>],
-						  ['Competence', <%= rate.com.to_i %>],
-						  ['Overall Score', <%= rate.evalScore.to_i %>]
+						  ['Competence', <%= rate.com.to_i %>]
 						  
 				  
 						]);
@@ -46,10 +49,36 @@
 					
 						chart.draw(data, options);
 					}
+					setInterval(drawChart, 1000);
+				</script>
+				<script type="text/javascript">
+			  		google.load("visualization", "1", {packages:["gauge"], callback:function(){drawChart();}});
+			  		//google.setOnLoadCallback(drawChart);
+					function drawChart() {
+				
+						var data = google.visualization.arrayToDataTable([
+						  ['Label', 'Value'],
+						  ['Overall Score', <%= rate.evalScore.to_i %>]
+						  
+				  
+						]);
+					
+						var options = {
+						  width: '100%', height: '100%',
+						  greenFrom: 75, greenTo: 100,	  
+						  redFrom: 0, redTo: 25,
+						  minorTicks: 5
+						};
+					
+						var chart = new google.visualization.Gauge(document.getElementById('chart_div2'));
+					
+						chart.draw(data, options);
+					}
 				</script>
 			<% end %>
 		<% end %>
-		<div id="chart_div" style="width: 550px; height: 400px; position: absolute; top: 135px; left: 700px;">
+		<div id="chart_div" style="width: 145px; height: 1000px; position: absolute; top: 80px; left: 650px;"></div>
+		<div id="chart_div2" style="width: 550px; height: 450px; position: absolute; top: 135px; left: 810px;"></div>
 	</div>
 </div>
 

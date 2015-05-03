@@ -23,8 +23,9 @@
 		p {
 			font-size: 20px;
 			float: left;
-			width: 40%;
-			margin: 10px 0 2px 60px;
+			width: 35%;
+			padding-left: 55px;
+			margin: 10px 0 2px 40px;
 		}
 		.title {
 			font-weight: bold;
@@ -38,11 +39,11 @@
 			background-color: #33cc77;
 			position:absolute; 
 			bottom:10px;
-			left: 125px;
+			left: 150px;
 			text-align: center;
-			padding: 25px 50px 25px 50px;
+			padding: 25px 40px 20px 40px;
 			a {
-				font-size: 22px;
+				font-size: 24px;
 				text-decoration: none;
 				color: white;
 			}
@@ -53,7 +54,7 @@
 #evaluation {
 	margin: 0;
 	padding: 0;
-	height: 950px;
+	height: 925px;
 	width: 100%;
 	overflow: scroll;
 	#empSelect{
@@ -69,7 +70,7 @@
 	}
 	.left, .middle, .right {
 		width: 33.2%;
-		height: 435px;
+		height: 450px;
 		float: left;
 		border-bottom: 1px solid black;
 	}
@@ -94,14 +95,14 @@
 			width: 100%;
 		}
 		#question {
-			height: 125px;
-			padding: 5px 0 0 0;
+			height: 135px;
+			padding: 1																																				5px 0 0 0;
 			clear: both;
 			h3 {
 				text-align: left;
 				font-size: 20px;
 				margin: 0;
-				padding: 10px 0 10px 5px;
+				padding: 20px 0 10px 15px;
 			}
 			.lOne, .lTwo, .lThree {
 				text-align: center;
@@ -116,7 +117,7 @@
 			background-color: #fff;
 		}
 		#sp_question {
-			height: 125px;
+			height: 135px;
 			padding: 5px 0 0 0;
 			width: 33.3%;
 			float:left;
@@ -124,7 +125,7 @@
 				text-align: left;
 				font-size: 20px;
 				margin: 0;
-				padding: 10px 0 10px 5px;
+				padding: 20px 0 10px 15px;
 			}
 			.lOne, .lTwo, .lThree {
 				text-align: center;

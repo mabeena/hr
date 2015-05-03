@@ -1,4 +1,4 @@
-class Evaluation < ActiveRecord::Base
+	class Evaluation < ActiveRecord::Base
 before_save :insertScore
 
 	belongs_to :employee

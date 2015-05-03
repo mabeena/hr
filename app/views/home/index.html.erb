@@ -1,95 +1,20 @@
 <% if employee_signed_in? && current_employee.position_id.present? %>
 	<div id="supportnavi">
 		<ul>
-			<li class="current"><%= link_to 'my dashboard', root_path %></li>
-			<li><%= link_to 'add educations', educations_path %></li>
-			<li><%= link_to 'add skill-sets', skills_path %></li>
-			<li><%= link_to 'add positions', positions_path %></li>
+			<% if current_employee.emp_role == "Human Resources" %>
+				<li class="current"><%= link_to 'my dashboard', root_path %></li>
+				<li><%= link_to 'add educations', educations_path %></li>
+				<li><%= link_to 'add skill-sets', skills_path %></li>
+				<li><%= link_to 'add positions', positions_path %></li>
+			<% else %>
+			<% end %>
 		</ul>
 	</div>
 	<div id="charts">
 		<%= pie_chart @org_role.group(:role).count %>
 		<%= column_chart @org.group(:level).count %>
 		<%= bar_chart @org_educations.group(:degree).count %>
-		
-		<script type="text/javascript">
-		google.load("visualization", "1", {packages:["corechart"]});
-		google.setOnLoadCallback(drawSeriesChart);
-	
-		function drawSeriesChart() {
-		  var data = google.visualization.arrayToDataTable([
-			['ID', 									'', 			'',     	'Type', 	''],
-			['web design',    						23,             90,      'Technical',  210],
-			['web development',    					51,             57,      'Technical',    14],
-			['user experience',    					100,            92,      'Technical',    180],
-			['procedural programming',    			65,             78,      'Technical',    10],
-			['object oriented programming',    		70,             82,      'Technical',    140],
-			['scripting languages',    				35,             97,      'Technical',  	150],
-			['application security',    			30,             66,      'Technical',    27],
-			['device mgmt',    						55,             91,      'Technical',    175],
-			['mobile app development',    			20,             18,      'Technical',    20],
-			['sql',    								45,             139,     'Technical',    110],
-			['big data',    						80,             134,     'Technical',    70],
-			['nosql',    							65,             124,     'Technical',    50],
-			['analytics',    						97,             70,     'Technical',    26],
-			['db admin',    						65,             40,     'Technical',    22],
-			['cloud admin',    						100,            30,     'Technical',    37],
-			['networking',    						75,             33,     'Technical',    41],
-			['sharepoint',    						80,             182,     'Technical',    32],
-		
-			['presenter',    						82,             39,     'Business',  	450],
-			['leadership',    						46,             62,     'Business',  	204],
-			['team builder',    					39,             26,     'Business',  	209],
-			['problem solver',    					10,             24,     'Business',  	79],
-			['coordinator',    						51,             95,     'Business',  	144],
-			['business intel',    					30,             155,     'Business',  	164],
-			['risk management',    					65,             144,     'Business',  	64],
-			['project management',    				10,             76,     'Business',  	44],
-			['program management',    				105,            88,     'Business',  	14],
-			['scrum',    							30,             56,     'Business',  	24],
-			['lean methodologies',    				35,             139,     'Business',  	17],        
-			['strategic planning',    				40,             32,     'Business',  	20],        
-			['flow charts',    						75,             95,     'Business',  	30],        
-			['adobe suite',    						50,             120,     'Business',  	81],        
-			['microsoft suite',    					85,             109,     'Business',  	34],        
-			['excel reporting',    					70,             91,     'Business',  	114],        
-			['sap',    								65,             41,     'Business',  	30],        
-			['social media',    					70,             31,     'Business',  	24],        
-			['interpret analytics',    				78,             28,     'Business',  	19],        
-			['product marketing',    				75,             51,     'Business',  	15],        
-			['employee tracking',    				80,             134,     'Business',  	32],        
-			['payroll reporting',    				85,             109,     'Business',  	35],        
-			['financial auditing',    				96,             118,     'Business',  	20] 
-		  ]);
-	
-		  var options = {
-			bubble: {textStyle: {fontSize: 11}},
-			chartArea:{left:0, top:0, width:'100%', height:'100%'}, 
-			titleTextStyle: {fontSize: 21},
-			fontSize: 16,
-			alignment: "center",
-			legend: 'none',
-			hAxis: {
-				gridlines: {
-					color: "#fff"
-				},
-				textStyle: {color: "#fff"},
-				baselineColor: '#fff'
-			},
-			vAxis: {
-				gridlines: {
-					color: "#fff"
-				},
-				textStyle: {color: "#fff"},
-				baselineColor: '#fff'
-			}
-		  };
-	
-		  var chart = new google.visualization.BubbleChart(document.getElementById('series_chart_div'));
-		  chart.draw(data, options);
-		}
-		</script>
-		<div id="series_chart_div" style="width: 600px; height: 320px; position: absolute; top: 333px; left: 698px"></div>
+		<%= render partial: 'gScript' %>
 	</div>
 <% elsif employee_signed_in? && current_employee.position_id.nil?  %>
 	<div id="thanks">

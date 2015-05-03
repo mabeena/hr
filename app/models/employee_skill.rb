@@ -8,4 +8,11 @@ class EmployeeSkill < ActiveRecord::Base
 	def emp_name
 		employee.employee_name
 	end
+	def skArrary
+		a = EmployeeSkill.joins(:skill, :employee).select("skill_id", "employee_id")
+		b = EmployeeSkill.joins(:employee).select("employee_id")
+		c = a.pluck("employee_id", "skill_id")
+		d = a.pluck("employee_id")
+		return c
+	end
 end

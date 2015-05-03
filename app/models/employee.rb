@@ -12,13 +12,21 @@ class Employee < ActiveRecord::Base
     has_many :employee_educations
     belongs_to :position
 	
+	def posrole
+		position.pos_role
+	end
+	
+	def emprole
+		position.emp_role
+	end
+	
 	def employee_name
 		a = fname + ' ' + lname
 		a.titleize
 	end
 	
 	def emp_role
-		position.role
+		position.emp_role
 	end
 	def emp_title
 		b = "(#{emp_role})"
@@ -31,14 +39,11 @@ class Employee < ActiveRecord::Base
 	def self.search(query)
     	where("fname like ? OR lname like ?", "%#{query}%", "%#{query}%")    
 	end
-  
-  #def self.search(params)
-    
-   #        where(educations: params[:degree], positions: params[:level])
-    #       .includes(:educations, :positions)
-   
-  #end
-
+  	
+	def etest
+		e = Employee.all
+		return e
+	end
  
 end
 
