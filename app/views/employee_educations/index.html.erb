@@ -12,7 +12,8 @@
 			<p class="emp_name"><%= employee.employee_name %></p>
 			<% @employee_educations.each do |employee_education| %>
 				<% if employee_education.employee_id == employee.id %>
-					<p class="detail_name"><%= employee_education.ed_name %>
+					<p class="detail_name"><%= employee_education.degree_type %>:
+					<p class="detail_name"><%= employee_education.degree_con %>
 				<% end %>
 			<% end %>
 			<br /><br /></p> 

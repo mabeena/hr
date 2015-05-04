@@ -26,7 +26,11 @@ class Employee < ActiveRecord::Base
 	end
 	
 	def emp_role
-		position.emp_role
+		if self.position_id.nil?
+		else
+			e = position.emp_role
+		end
+		return e
 	end
 	def emp_title
 		b = "(#{emp_role})"
